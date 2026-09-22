@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marrada Sport Club | Complexo Esportivo de Alto Padrão em Parnamirim</title>
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN + Cores Marrada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              700: '#195237',
+              800: '#133e2a',
+              900: '#0c2b1d',
+              950: '#061910',
+            },
+            'marrada-orange': '#f26522',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans">
+
+  <!-- BARRA DE TOPO / ANÚNCIO -->
+  <div class="bg-forest-900 text-white text-xs md:text-sm py-2 px-4 border-b border-forest-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium">Inscrições abertas para a Copa Fut7 Empresarial &amp; Promoção Beach Tennis 4x4</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs text-slate-300">
+        <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-marrada-orange"></i> Parnamirim - RN</span>
+        <a href="https://wa.me/5584991263957" target="_blank" class="hover:text-emerald-400 font-semibold transition-colors flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> (84) 99126-3957
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER NAVEGAÇÃO -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="assets/logo.png" alt="Marrada Sport Club" class="h-14 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/180x60/133e2a/ffffff?text=MARRADA+SPORT+CLUB'">
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+        <a href="#estrutura" class="hover:text-forest-700 transition-colors">Estrutura &amp; Quadras</a>
+        <a href="#promocao" class="hover:text-forest-700 transition-colors">Promoção Beach Tennis</a>
+        <a href="#copa-fut7" class="hover:text-forest-700 transition-colors">Copa Fut7 Empresarial</a>
+        <a href="#eventos" class="hover:text-forest-700 transition-colors">Eventos &amp; Kids</a>
+        <a href="#premiados" class="hover:text-forest-700 transition-colors">Atletas Premiados</a>
+        <a href="#localizacao" class="hover:text-forest-700 transition-colors">Como Chegar</a>
+      </nav>
+
+      <!-- Botão CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#agendamento" class="btn-primary flex items-center gap-2">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          <span>Agendar Quadra</span>
+        </a>
+      </div>
+
+      <!-- Menu Hambúrguer Mobile -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-forest-800" aria-label="Abrir Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Dropdown Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 bg-white px-6 py-5 shadow-xl space-y-4">
+      <a href="#estrutura" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Estrutura &amp; Quadras</a>
+      <a href="#promocao" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Promoção Beach Tennis</a>
+      <a href="#copa-fut7" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Copa Fut7 Empresarial</a>
+      <a href="#eventos" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Eventos &amp; Kids</a>
+      <a href="#premiados" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Atletas Premiados</a>
+      <a href="#localizacao" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Como Chegar</a>
+      <a href="#agendamento" class="btn-primary w-full text-center flex items-center justify-center gap-2 mt-3 mobile-link">
+        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+        <span>Agendar Quadra</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Textos Hero -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="award" class="w-4 h-4 text-emerald-600"></i>
+            O Maior Complexo Esportivo de Parnamirim
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Esporte, alta performance e <span class="text-transparent bg-clip-text bg-gradient-to-r from-forest-800 to-emerald-600">lazer para sua família</span>.
+          </h1>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Viva a experiência esportiva definitiva: 9 quadras de areia profissionais, campos sintéticos de Fut7, o gramado natural Marradão, escolinha, área kids completa, churrasqueiras e salão de festas climatizado.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#agendamento" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2 shadow-lg shadow-forest-900/10">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+              <span>Garantir Meu Horário</span>
+            </a>
+            <a href="https://wa.me/5584991263957?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20quadras" target="_blank" class="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+              <span>Falar no WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Badges Rápidos -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200">
+            <div>
+              <p class="text-2xl lg:text-3xl font-black text-slate-900">100%</p>
+              <p class="text-xs text-slate-500 font-medium">Iluminação LED Pro</p>
+            </div>
+            <div>
+              <p class="text-2xl lg:text-3xl font-black text-slate-900">Amplo</p>
+              <p class="text-xs text-slate-500 font-medium">Estacionamento</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Visual Hero / Imagem Aérea -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl p-3 bg-white shadow-2xl border border-slate-200/80 group">
+            <div class="overflow-hidden rounded-2xl relative aspect-[4/3] bg-slate-100">
+              <img src="assets/futsetvistacima.png" alt="Complexo Marrada Sport Club visto de cima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80'">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span class="inline-block px-2.5 py-1 rounded bg-marrada-orange text-[11px] font-black uppercase tracking-wider mb-1">Estrutura Completa</span>
+                <p class="font-bold text-sm sm:text-base">Campos Oficiais</p>
+                <p class="text-xs text-slate-200">Localização privilegiada com fácil acesso</p>
+              </div>
+            </div>
+            <!-- Selo Flutuante -->
+            <div class="absolute -bottom-4 -right-4 bg-forest-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-forest-700 flex items-center gap-3">
+              <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i>
+              <div>
+                <p class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Padrão Oficial</p>
+                <p class="text-sm font-extrabold text-white">Torneios</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO GRID: ESTRUTURA (2 LINHAS X 3 COLUNAS) -->
+  <section id="estrutura" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <p class="text-emerald-700 font-bold text-xs uppercase tracking-widest">Infraestrutura Esportiva</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">O espaço perfeito para o seu jogo</h2>
+        <p class="text-slate-600 text-base font-normal">Ambientes projetados para atletas profissionais, rachas corporativos e finais de semana entre amigos.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: 09 Quadras de Areia -->
+        <div class="card-bento group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/beach-tennis.jpg" alt="09 Quadras de Areia Beach Tennis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1000&q=80'">
+            <div class="absolute top-4 left-4">
+              <span class="bg-forest-900/90 text-white backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">09 Quadras de Areia</span>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Beach Tennis, Futevôlei &amp; Vôlei</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Areia tratada e drenagem de alto padrão para máxima performance e conforto articular, com iluminação LED para partidas noturnas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Marradão Grama Natural -->
+        <div class="card-bento group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/marradao.jpg" alt="Campo de Grama Natural Marradão" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1556056504-5c7696c4c28d?auto=format&fit=crop&w=800&q=80'">
+            <div class="absolute top-4 left-4">
+              <span class="bg-marrada-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Exclusivo</span>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">O "Marradão"</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Campo oficial de grama natural tratada periodicamente. A verdadeira sensação do futebol clássico para quem não abre mão da grama natural.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Campos Fut7 Society -->
+        <div class="card-bento group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/futsetcampo2.png" alt="Campos de Grama Sintética Fut7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Complexo Fut7 Society</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Gramado sintético de última geração com absorção de impacto, redes de proteção novas e bancos de reservas profissionais.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: Salão de Festas & Kids -->
+        <div class="card-bento group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/kids-eventos.jpg" alt="Área Kids e Salão de Eventos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Salão de Festas &amp; Kids</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Espaço completo para confraternizações corporativas, aniversários com campinho kids integrado e playground protegido para crianças.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 5: Futmesa & Convivência -->
+        <div class="card-bento group">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/futmesa.jpg" alt="Área de Futmesa e Bar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Futmesa</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Tabelas oficiais de futmesa, área de convivência e quiosques ideais para o pós-jogo com conforto após a partida.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 6: 02 Churrasqueiras & Espaço Gourmet -->
+        <div class="card-bento group">
+          <div class="h-64 overflow-hidden relative bg-slate-100">
+            <img src="assets/churrascaria01.png" alt="02 Churrasqueiras e Espaço Gourmet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80'">
+            <div class="absolute top-4 left-4">
+              <span class="bg-marrada-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Terceiro Tempo</span>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">02 Churrasqueiras Gourmet</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Área de churrasco equipada e coberta, perfeita para confraternizações de times, eventos comemorativos e resenha com a família.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DESTAQUE: PROMOÇÃO BEACH TENNIS -->
+  <section id="promocao" class="py-16 bg-slate-50 border-t border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-forest-900 to-forest-800 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
+        
+        <div class="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-marrada-orange text-white text-xs font-bold uppercase tracking-wider">
+              <i data-lucide="tag" class="w-3.5 h-3.5"></i> Promoção Especial Beach Tennis
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Junte seu quarteto e venha jogar na areia do Marrada</h2>
+            <p class="text-slate-200 text-base max-w-2xl leading-relaxed">
+              Preencha o horário de preferência para você e seus 3 amigos. Nossa equipe entra em contato com prioridade para confirmar a disponibilidade da quadra com condições especiais.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2 text-sm text-slate-300">
+              <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Raquetes e bolinhas disponíveis</span>
+              <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Vestiários equipados</span>
+              <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Chuveirões pós-jogo</span>
+            </div>
+          </div>
+          <div class="lg:col-span-4 flex justify-center lg:justify-end">
+            <a href="#agendamento" class="px-8 py-4 rounded-xl bg-white text-forest-900 font-extrabold text-base hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center gap-2">
+              <i data-lucide="send" class="w-5 h-5 text-marrada-orange"></i>
+              <span>Solicitar Horário</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO COPA FUT7 EMPRESARIAL -->
+  <section id="copa-fut7" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Detalhes do Torneio -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="trophy" class="w-4 h-4 text-marrada-orange"></i> Torneios &amp; Competições Oficiais
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Copa Fut7 Empresarial Marrada</h2>
+          <p class="text-slate-600 text-base leading-relaxed">
+            A maior vitrine de integração esportiva corporativa da região. Organize a equipe da sua empresa e dispute um torneio estruturado com arbitragem federada, premiação e cobertura de mídia.
+          </p>
+
+          <!-- Benefício Chave -->
+          <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200/70 space-y-2">
+            <div class="flex items-center gap-2 font-bold text-forest-900">
+              <i data-lucide="gift" class="w-5 h-5 text-emerald-600"></i>
+              <span>Benefício Exclusivo para Empresas Inscritas</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              Equipes inscritas têm direito a horários disponíveis nas quadras para treinos de preparação durante o período da competição (segunda a sexta, 18h às 22h, conforme disponibilidade de reserva semanal).
+            </p>
+          </div>
+
+          <!-- Fases do Torneio -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-4 p-3 rounded-xl border border-slate-200 bg-slate-50/50">
+              <div class="bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shrink-0">FASE 1</div>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Fase Classificatória Inicial</p>
+                <p class="text-xs text-slate-500">Campeão e vice avançam direto para o Finals.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-3 rounded-xl border border-slate-200 bg-slate-50/50">
+              <div class="bg-forest-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shrink-0">FASE 2</div>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Segunda Rodada &amp; Repescagem</p>
+                <p class="text-xs text-slate-500">Definição dos últimos classificados.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-3 rounded-xl border border-marrada-orange/40 bg-orange-50/40">
+              <div class="bg-marrada-orange text-white text-xs font-bold px-3 py-1.5 rounded-lg shrink-0">FINALS</div>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Semifinais &amp; Grande Final</p>
+                <p class="text-xs text-slate-600">Disputa das 4 melhores equipes com entrega de troféus.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5584991263957?text=Ol%C3%A1%2C%20quero%20inscrever%20minha%20empresa%20na%20Copa%20Fut7%20Empresarial" target="_blank" class="btn-primary inline-flex items-center gap-2">
+            <i data-lucide="clipboard-check" class="w-4 h-4"></i>
+            <span>Inscrever Minha Empresa</span>
+          </a>
+        </div>
+
+        <!-- Banner / Apoio Institucional -->
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl border border-slate-200 p-6 bg-slate-50 shadow-md space-y-6">
+            <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-white border border-slate-200 p-2">
+              <img src="assets/futempresalogo.png" alt="Copa Fut7 Empresarial" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Apoio &amp; Parcerias Estratégicas</p>
+              <div class="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-600">
+                <span class="px-3 py-1.5 bg-white rounded-lg border border-slate-200">Marrada Competições</span>
+                <span class="px-3 py-1.5 bg-white rounded-lg border border-slate-200">CDL Parnamirim</span>
+                <span class="px-3 py-1.5 bg-white rounded-lg border border-slate-200">Prefeitura de Parnamirim</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO EVENTOS, SALÃO DE FESTAS & ÁREA KIDS -->
+  <section id="eventos" class="py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Galeria Visual do Espaço de Eventos -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100 aspect-[4/3] group">
+            <img src="assets/campokids.png" alt="Salão de Festas e Área Kids Marrada" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="inline-block px-2.5 py-1 rounded bg-forest-800 text-[11px] font-bold uppercase tracking-wider mb-1">Ambiente Familiar</span>
+              <p class="font-bold text-lg">Salão de Festas &amp; Campinho Kids</p>
+              <p class="text-xs text-slate-200">Segurança total e diversão para todas as idades</p>
+            </div>
+          </div>
+
+          <!-- Card de Destaque Único -->
+          <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+            <div class="p-2.5 rounded-xl bg-emerald-50 text-emerald-700 shrink-0">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-slate-900">Playground &amp; Campo Kids Exclusivo</p>
+              <p class="text-xs text-slate-500">Área protegida com gramado sintético e brinquedos para as crianças</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Descrição e Benefícios para Eventos -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="party-popper" class="w-4 h-4 text-emerald-600"></i>
+            Confraternizações &amp; Aniversários
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Celebre no Marrada com conforto, segurança e lazer
+          </h2>
+          
+          <p class="text-slate-600 text-base leading-relaxed">
+            O local ideal para comemorar o aniversário dos pequenos ou realizar eventos sociais e corporativos. Um ambiente pensado para acomodar seus convidados com infraestrutura moderna e tranquilidade.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="p-1 rounded-full bg-emerald-100 text-emerald-700 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Salão Social Equipado</p>
+                <p class="text-xs text-slate-500">Espaço amplo, mobiliário de apoio, bar e sanitários privativos.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="p-1 rounded-full bg-emerald-100 text-emerald-700 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Campinho Kids &amp; Playground Integrado</p>
+                <p class="text-xs text-slate-500">Mini campinho com traves infantis e tela de segurança para total tranquilidade dos pais.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="p-1 rounded-full bg-emerald-100 text-emerald-700 mt-1">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Privacidade &amp; Estacionamento</p>
+                <p class="text-xs text-slate-500">Acomodação confortável e estacionamento interno para receber todos os seus convidados.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
+            <a href="https://wa.me/5584991263957?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20no%20Sal%C3%A3o%20de%20Festas%20%2F%20%C3%81rea%20Kids" target="_blank" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>Consultar Data do Salão</span>
+            </a>
+            <a href="#agendamento" class="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2">
+              <span>Ver Horários de Quadras</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO ATLETAS PREMIADOS (RESUMIDA / EXEMPLO) -->
+  <section id="premiados" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-2 mb-10">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="medal" class="w-3.5 h-3.5 text-amber-600"></i> Destaques do Marrada
+        </span>
+        <h2 class="text-3xl font-extrabold text-slate-900">Atletas Premiados</h2>
+        <p class="text-slate-500 text-sm">Nossos atletas que levam o nome do Marrada ao topo do pódio.</p>
+      </div>
+
+      <!-- Card Centralizado de Exemplo -->
+      <div class="max-w-sm mx-auto card-bento group">
+        <div class="h-72 overflow-hidden relative bg-slate-100">
+          <img src="assets/matheustrofeu.png" alt="Atleta de Beach Tennis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=600&q=80'">
+          <div class="absolute top-3 left-3">
+            <span class="bg-forest-900 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1">
+              <i data-lucide="trophy" class="w-3 h-3 text-amber-400"></i> Campeão(ã) 1º Lugar
+            </span>
+          </div>
+        </div>
+        <div class="p-5 text-center space-y-1.5">
+          <span class="text-xs font-bold text-marrada-orange uppercase tracking-wider">Beach Tennis</span>
+          <h3 class="font-extrabold text-lg text-slate-900">Matheus Bezerra</h3>
+          <p class="text-xs text-slate-500">Circuito Estadual &bull; Categoria Open</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO DE AGENDAMENTO INTELIGENTE (DISPARO WHATSAPP) -->
+  <section id="agendamento" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-3 mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-700">Atendimento Ágil</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Faça sua Pré-Reserva de Horário</h2>
+        <p class="text-slate-600 text-sm sm:text-base">Selecione a quadra ou espaço desejado. Os dados serão enviados formatados diretamente para o WhatsApp oficial do Marrada.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl">
+        <form id="booking-form" class="space-y-6">
+
+          <!-- Escolha de Modalidade / Espaço -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">1. Escolha a Modalidade / Espaço</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3" id="sport-selector">
+              <button type="button" data-sport="Beach Tennis (Promo 4 amigos)" class="sport-btn active">
+                <i data-lucide="sun" class="w-5 h-5 mx-auto mb-1 text-marrada-orange"></i>
+                <span class="text-xs font-bold block">Beach Tennis</span>
+                <span class="text-[10px] text-slate-500">Promoção 4x4</span>
+              </button>
+              <button type="button" data-sport="Fut7 Society" class="sport-btn">
+                <i data-lucide="shield" class="w-5 h-5 mx-auto mb-1 text-emerald-600"></i>
+                <span class="text-xs font-bold block">Fut7 Society</span>
+                <span class="text-[10px] text-slate-500">Sintético</span>
+              </button>
+              <button type="button" data-sport="Vôlei de Praia / Futevôlei" class="sport-btn">
+                <i data-lucide="wind" class="w-5 h-5 mx-auto mb-1 text-blue-500"></i>
+                <span class="text-xs font-bold block">Vôlei / Areia</span>
+                <span class="text-[10px] text-slate-500">09 Quadras</span>
+              </button>
+              <button type="button" data-sport="Marradão (Grama Natural)" class="sport-btn">
+                <i data-lucide="flag" class="w-5 h-5 mx-auto mb-1 text-emerald-700"></i>
+                <span class="text-xs font-bold block">Marradão</span>
+                <span class="text-[10px] text-slate-500">Grama Natural</span>
+              </button>
+              <button type="button" data-sport="02 Churrasqueiras / Evento" class="sport-btn">
+                <i data-lucide="flame" class="w-5 h-5 mx-auto mb-1 text-red-500"></i>
+                <span class="text-xs font-bold block">Churrasqueira</span>
+                <span class="text-[10px] text-slate-500">Espaço Gourmet</span>
+              </button>
+            </div>
+            <input type="hidden" name="selected_sport" id="selected_sport" value="Beach Tennis (Promo 4 amigos)">
+          </div>
+
+          <!-- Dados Pessoais -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="user_name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Seu Nome / Responsável</label>
+              <input type="text" id="user_name" required placeholder="Ex: Carlos Silva" class="input-field">
+            </div>
+            <div>
+              <label for="user_phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Seu WhatsApp</label>
+              <input type="tel" id="user_phone" required placeholder="(84) 99999-9999" class="input-field">
+            </div>
+          </div>
+
+          <!-- Data e Turno -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="booking_date" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Data de Preferência</label>
+              <input type="date" id="booking_date" required class="input-field">
+            </div>
+            <div>
+              <label for="booking_shift" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Turno / Horário Desejado</label>
+              <select id="booking_shift" required class="input-field">
+                <option value="Manhã (06h às 11h)">Manhã (06h às 11h)</option>
+                <option value="Tarde (14h às 18h)">Tarde (14h às 18h)</option>
+                <option value="Noite (18h às 22h)" selected>Noite (18h às 22h) - Mais procurado</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Observações -->
+          <div>
+            <label for="booking_notes" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Observações / Nome do Time / Confraternização (Opcional)</label>
+            <input type="text" id="booking_notes" placeholder="Ex: Partida entre amigos com churrasco depois" class="input-field">
+          </div>
+
+          <!-- Botão de Envio -->
+          <button type="submit" class="w-full btn-primary py-4 text-base flex items-center justify-center gap-3">
+            <i data-lucide="message-square" class="w-5 h-5"></i>
+            <span>Enviar Pré-Reserva no WhatsApp Oficial</span>
+          </button>
+
+          <p class="text-center text-xs text-slate-400">
+            Você será redirecionado para o WhatsApp com a mensagem formatada para confirmação rápida da equipe.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO / COMO CHEGAR -->
+  <section id="localizacao" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="compass" class="w-3.5 h-3.5 text-forest-800"></i> Localização Estratégica
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Fácil acesso em Parnamirim</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Localizado em área ampla com estacionamento próprio, segurança e comodidade para você desembarcar com sua família e equipe de jogo sem preocupações.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-marrada-orange shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Marrada Sport Club</p>
+                <p class="text-xs text-slate-500">Parnamirim - RN</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-forest-800 shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Horário de Funcionamento</p>
+                <p class="text-xs text-slate-500">Segunda a Domingo: 06h às 23h</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="instagram" class="w-5 h-5 text-pink-600 shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Instagram Oficial</p>
+                <a href="https://www.instagram.com/marradasportclub/" target="_blank" class="text-xs text-emerald-700 hover:underline">@marradasportclub</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/place/Marrada+Sport+Club/@-5.9349394,-35.2715684,1142m" target="_blank" class="btn-outline inline-flex items-center gap-2">
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+            <span>Abrir Rota no Google Maps</span>
+          </a>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl h-96 relative bg-slate-100">
+            <iframe 
+              title="Mapa Marrada Sport Club"
+              src="https://maps.google.com/maps?q=-5.9349394,-35.2715684&hl=pt-br&z=16&output=embed" 
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-forest-950 text-white pt-16 pb-12 border-t border-forest-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-2 space-y-4">
+          <img src="assets/logo.png" alt="Marrada Sport Club" class="h-14 w-auto object-contain brightness-100" onerror="this.src='https://placehold.co/180x60/133e2a/ffffff?text=MARRADA+SPORT+CLUB'">
+          <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+            O complexo esportivo de referência para o futebol, esportes de areia e lazer corporativo e familiar no Rio Grande do Norte.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Modalidades</h4>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li>Beach Tennis</li>
+            <li>Fut7 Society</li>
+            <li>Futevôlei &amp; Vôlei</li>
+            <li>Marradão Gramado</li>
+            <li>Churrasqueiras &amp; Eventos</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Contato Direto</h4>
+          <p class="text-xs text-slate-300 mb-2">WhatsApp: (84) 99126-3957</p>
+          <p class="text-xs text-slate-300 mb-4">Parnamirim - RN</p>
+          <a href="https://wa.me/5584991263957" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-marrada-orange hover:underline">
+            Chamar no WhatsApp &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-forest-900/80 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 Marrada Sport Club. Todos os direitos reservados.</p>
+        <p class="text-slate-400">Projeto &amp; Desenvolvimento Digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+  <a href="https://wa.me/5584991263957?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20quadras%20do%20Marrada" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Falar no WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out px-0 group-hover:px-2 font-bold text-xs">
+      Reservar Quadra
+    </span>
+  </a>
+
+  <!-- JS Customizado -->
+  <script src="script.js" charset="UTF-8"></script>
+</body>
+</html>
