@@ -1,53 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Inicializa ícones Lucide
-  if (window.lucide) {
-    window.lucide.createIcons();
+  // Inicialização dos ícones Lucide
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
   }
 
-  // 2. Menu Mobile Toggle
-  const mobileBtn = document.getElementById('mobile-menu-btn');
+  // Controlo do Menu Móvel
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
 
-    mobileLinks.forEach(link => {
+    mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
       });
     });
   }
 
-  // 3. Seletor Interativo de Modalidade Esportiva
+  // Seletor Interativo de Espaço / Modalidade
   const sportButtons = document.querySelectorAll('.sport-btn');
-  const hiddenSportInput = document.getElementById('selected_sport');
+  const hiddenInput = document.getElementById('selected_sport');
 
-  sportButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sportButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const sportName = btn.getAttribute('data-sport');
-      if (hiddenSportInput) {
-        hiddenSportInput.value = sportName;
+  sportButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      sportButtons.forEach((btn) => btn.classList.remove('active'));
+      button.classList.add('active');
+      if (hiddenInput) {
+        hiddenInput.value = button.getAttribute('data-sport');
       }
     });
   });
 
-  // 4. Integração do Formulário de Agendamento com o WhatsApp
+  // Envio Inteligente para WhatsApp
   const bookingForm = document.getElementById('booking-form');
 
   if (bookingForm) {
-    // Configura a data mínima como o dia de hoje
-    const dateInput = document.getElementById('booking_date');
-    if (dateInput) {
-      const today = new Date().toISOString().split('T')[0];
-      dateInput.min = today;
-      dateInput.value = today;
-    }
-
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -58,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const turno = document.getElementById('booking_shift').value;
       const observacoes = document.getElementById('booking_notes').value.trim();
 
-      // Formata a data para padrão BR (DD/MM/AAAA)
       let dataFormatada = data;
       if (data) {
         const partes = data.split('-');
@@ -67,47 +57,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Montagem da mensagem limpa e formatada
-      let msg = "*NOVA SOLICITAÇÃO DE RESERVA - MARRADA SPORT CLUB*\n\n";
-      msg += "⚽ *Modalidade:* " + modalidade + "\n";
-      msg += "👤 *Nome:* " + nome + "\n";
-      msg += "📱 *Telefone/Whats:* " + telefone + "\n";
-      msg += "📅 *Data Desejada:* " + dataFormatada + "\n";
-      msg += "⏰ *Turno:* " + turno + "\n";
+      // Códigos Unicode dos emojis para garantir compatibilidade perfeita no telemóvel
+      const iconReserva = String.fromCodePoint(0x1F3AF);
+      const iconUser = String.fromCodePoint(0x1F464);
+      const iconPhone = String.fromCodePoint(0x1F4F1);
+      const iconDate = String.fromCodePoint(0x1F4C5);
+      const iconClock = String.fromCodePoint(0x23F0);
+      const iconNotes = String.fromCodePoint(0x1F4DD);
+
+      let linhas = [
+        "*NOVA SOLICITAÇÃO DE RESERVA - MARRADA SPORT CLUB*",
+        "",
+        `${iconReserva} *Espaço / Modalidade:* ${modalidade}`,
+        `${iconUser} *Nome do Responsável:* ${nome}`,
+        `${iconPhone} *WhatsApp:* ${telefone}`,
+        `${iconDate} *Data Pretendida:* ${dataFormatada}`,
+        `${iconClock} *Turno / Período:* ${turno}`
+      ];
 
       if (observacoes) {
-        msg += "📝 *Obs/Time:* " + observacoes + "\n";
+        linhas.push(`${iconNotes} *Observações / Convidados:* ${observacoes}`);
       }
 
-      msg += "\n_Enviado pelo formulário do site oficial Marrada._";
+      linhas.push("", "_Mensagem enviada através do formulário do site oficial Marrada._");
 
-      // Se preferir 100% sem risco de quebra de caractere no Windows:
-      let textoPronto = encodeURIComponent(
-        "*NOVA SOLICITAÇÃO DE RESERVA - MARRADA SPORT CLUB*\n\n" +
-        "• *Modalidade:* " + modalidade + "\n" +
-        "• *Nome:* " + nome + "\n" +
-        "• *Telefone/Whats:* " + telefone + "\n" +
-        "• *Data Desejada:* " + dataFormatada + "\n" +
-        "• *Turno:* " + turno + "\n" +
-        (observacoes ? ("• *Obs/Time:* " + observacoes + "\n") : "") +
-        "\n_Enviado pelo formulário do site oficial Marrada._"
-      );
+      const mensagemFinal = linhas.join("\n");
+      const numeroOficial = "5584991263957";
 
-      const numeroWhatsMarrada = '5584991263957';
-      window.open('https://wa.me/' + numeroWhatsMarrada + '?text=' + textoPronto, '_blank');
-
-      // Abre a conversa diretamente no WhatsApp
-      window.open(urlWhatsapp, '_blank');
+      // Abre a API oficial do WhatsApp diretamente
+      const urlFinal = `https://api.whatsapp.com/send?phone=${numeroOficial}&text=${encodeURIComponent(mensagemFinal)}`;
+      window.open(urlFinal, '_blank');
     });
   }
-
-  // 5. Efeito sutil no Header ao rolar a página
-  const header = document.getElementById('main-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('shadow-sm');
-    } else {
-      header.classList.remove('shadow-sm');
-    }
-  });
 });
