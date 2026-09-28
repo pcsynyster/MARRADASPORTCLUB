@@ -90,6 +90,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // CONTROLO DO CARROSSEL DE EVENTOS (ARRASITAR / BOTÕES / PONTOS)
+  const carousel = document.getElementById('events-carousel');
+  const prevBtn = document.getElementById('prev-event-slide');
+  const nextBtn = document.getElementById('next-event-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+
+  if (carousel) {
+    const updateDots = () => {
+      const slideWidth = carousel.clientWidth;
+      const currentIndex = Math.round(carousel.scrollLeft / slideWidth);
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-white', 'scale-125');
+        } else {
+          dot.classList.remove('bg-white', 'scale-125');
+          dot.classList.add('bg-white/50');
+        }
+      });
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'), 10);
+        carousel.scrollTo({ left: carousel.clientWidth * index, behavior: 'smooth' });
+      });
+    });
+
+    carousel.addEventListener('scroll', updateDots);
+  }
+
   // LÓGICA DO MODAL PROMOCIONAL
   const promoModal = document.getElementById('promo-modal');
   const promoModalCard = document.getElementById('promo-modal-card');

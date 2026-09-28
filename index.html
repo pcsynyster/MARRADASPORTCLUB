@@ -91,7 +91,6 @@
       <a href="#eventos" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Festas, Piscina &amp; Churrasco</a>
       <a href="#promocao" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Promoção Beach Tennis</a>
       <a href="#copa-fut7" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Copa Fut7 Empresarial</a>
-      <a href="#premiados" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Atletas Premiados</a>
       <a href="#localizacao" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Como Chegar</a>
       <a href="#agendamento" class="btn-primary w-full text-center flex items-center justify-center gap-2 mt-3 mobile-link">
         <i data-lucide="calendar-check" class="w-4 h-4"></i>
@@ -229,7 +228,7 @@
         <!-- Card 4: Salão de Festas Climatizado & Kids -->
         <div class="card-bento group">
           <div class="h-64 overflow-hidden relative">
-            <img src="assets/campokids.png" alt="Salão de Festas Climatizado e Campinho Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+            <img src="assets/climatizada.jpg" alt="Salão de Festas Climatizado e Campinho Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
             <div class="absolute top-4 left-4">
               <span class="bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">100% Climatizado</span>
             </div>
@@ -261,7 +260,7 @@
         <!-- Card 6: Churrasqueira 02 Gourmet -->
         <div class="card-bento group">
           <div class="h-64 overflow-hidden relative bg-slate-100">
-            <img src="assets/futmesa.jpg" alt="Churrasqueira Tradicional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
+            <img src="assets/churrasqueira02.jpg" alt="Churrasqueira Tradicional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
             <div class="absolute top-4 left-4">
               <span class="bg-marrada-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Churrasqueira Padrão</span>
             </div>
@@ -278,23 +277,73 @@
     </div>
   </section>
 
-  <!-- SEÇÃO EVENTOS, SALÃO CLIMATIZADO & CHURRASQUEIRAS COM/SEM PISCINA (WHATSAPP RESERVAS) -->
+  <!-- SEÇÃO EVENTOS, SALÃO CLIMATIZADO & CHURRASQUEIRAS COM/SEM PISCINA (COM CARROSSEL DE FOTOS) -->
   <section id="eventos" class="py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
+        <!-- Galeria Visual do Espaço de Eventos com Carrossel / Slider -->
         <div class="lg:col-span-6 space-y-4">
-          <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100 aspect-[4/3] group">
-            <img src="assets/campokids.png" alt="Salão de Festas Climatizado e Campinho Kids Marrada" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <span class="inline-block px-2.5 py-1 rounded bg-sky-600 text-[11px] font-bold uppercase tracking-wider mb-1">Totalmente Climatizado</span>
-              <p class="font-bold text-lg">Salão de Festas &amp; Campinho Kids</p>
-              <p class="text-xs text-slate-200">Conforto térmico, segurança e diversão para as crianças</p>
+          
+          <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900 aspect-[4/3] group">
+            
+            <!-- Slides Container (Deslize horizontal nativo) -->
+            <div id="events-carousel" class="flex w-full h-full overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+              
+              <!-- Slide 1: Salão Climatizado & Kids -->
+              <div class="w-full h-full flex-shrink-0 relative snap-start">
+                <img src="assets/campokids.png" alt="Salão Climatizado e Campinho Kids Marrada" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <span class="inline-block px-2.5 py-1 rounded bg-sky-600 text-[11px] font-bold uppercase tracking-wider mb-1">Totalmente Climatizado</span>
+                  <p class="font-bold text-lg">Salão de Festas &amp; Campinho Kids</p>
+                  <p class="text-xs text-slate-200">Conforto térmico, segurança e diversão para as crianças</p>
+                </div>
+              </div>
+
+              <!-- Slide 2: Churrasqueira com Piscina -->
+              <div class="w-full h-full flex-shrink-0 relative snap-start">
+                <img src="assets/churrascaria01.png" alt="Churrasqueira com Piscina Privativa" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <span class="inline-block px-2.5 py-1 rounded bg-emerald-600 text-[11px] font-bold uppercase tracking-wider mb-1">Churrasqueira + Piscina</span>
+                  <p class="font-bold text-lg">Espaço Gourmet com Piscina Privativa</p>
+                  <p class="text-xs text-slate-200">Área exclusiva para churrasco em família e festas</p>
+                </div>
+              </div>
+
+              <!-- Slide 3: Churrasqueira Gourmet Pós-Jogo -->
+              <div class="w-full h-full flex-shrink-0 relative snap-start">
+                <img src="assets/churrasqueira02.jpg" alt="Churrasqueira Tradicional Gourmet" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <span class="inline-block px-2.5 py-1 rounded bg-marrada-orange text-[11px] font-bold uppercase tracking-wider mb-1">Churrasqueira Padrão</span>
+                  <p class="font-bold text-lg">Churrasqueira Gourmet (Sem Piscina)</p>
+                  <p class="text-xs text-slate-200">Estrutura coberta perfeita para o terceiro tempo dos jogos</p>
+                </div>
+              </div>
+
             </div>
+
+            <!-- Botões de Navegação Anterior e Seguinte -->
+            <button type="button" id="prev-event-slide" aria-label="Foto Anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-105 backdrop-blur-sm z-10">
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button type="button" id="next-event-slide" aria-label="Próxima Foto" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-105 backdrop-blur-sm z-10">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Indicadores (Pontos inferiores) -->
+            <div class="absolute bottom-2 right-4 flex items-center gap-1.5 z-10" id="carousel-dots">
+              <button type="button" data-index="0" class="carousel-dot w-2 h-2 rounded-full bg-white transition-all scale-125" aria-label="Ir para slide 1"></button>
+              <button type="button" data-index="1" class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" aria-label="Ir para slide 2"></button>
+              <button type="button" data-index="2" class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" aria-label="Ir para slide 3"></button>
+            </div>
+
           </div>
 
+          <!-- Cards Comparativos das Churrasqueiras -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
               <div class="p-2.5 rounded-xl bg-emerald-50 text-emerald-700 shrink-0 mt-0.5">
@@ -316,6 +365,7 @@
               </div>
             </div>
           </div>
+
         </div>
 
         <div class="lg:col-span-6 space-y-6">
