@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Envio Inteligente para WhatsApp
+  // Envio Inteligente para WhatsApp de Reservas Gerais
   const bookingForm = document.getElementById('booking-form');
 
   if (bookingForm) {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Códigos Unicode dos emojis para garantir compatibilidade perfeita no telemóvel
+      // Emojis codificados nativamente para telemóveis
       const iconReserva = String.fromCodePoint(0x1F3AF);
       const iconUser = String.fromCodePoint(0x1F464);
       const iconPhone = String.fromCodePoint(0x1F4F1);
@@ -82,11 +82,65 @@ document.addEventListener('DOMContentLoaded', () => {
       linhas.push("", "_Mensagem enviada através do formulário do site oficial Marrada._");
 
       const mensagemFinal = linhas.join("\n");
-      const numeroOficial = "5584991263957";
+      // NÚMERO EXCLUSIVO DE RESERVAS GERAIS:
+      const numeroReservasGerais = "5584994289028";
 
-      // Abre a API oficial do WhatsApp diretamente
-      const urlFinal = `https://api.whatsapp.com/send?phone=${numeroOficial}&text=${encodeURIComponent(mensagemFinal)}`;
+      const urlFinal = `https://api.whatsapp.com/send?phone=${numeroReservasGerais}&text=${encodeURIComponent(mensagemFinal)}`;
       window.open(urlFinal, '_blank');
+    });
+  }
+
+  // LÓGICA DO MODAL PROMOCIONAL
+  const promoModal = document.getElementById('promo-modal');
+  const promoModalCard = document.getElementById('promo-modal-card');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  const dismissModalBtn = document.getElementById('dismiss-modal-btn');
+  const promoActionBtn = document.getElementById('promo-action-btn');
+
+  function openPromoModal() {
+    if (!promoModal) return;
+    promoModal.classList.remove('opacity-0', 'pointer-events-none');
+    promoModal.classList.add('opacity-100', 'pointer-events-auto');
+    if (promoModalCard) {
+      promoModalCard.classList.remove('scale-95');
+      promoModalCard.classList.add('scale-100');
+    }
+  }
+
+  function closePromoModal() {
+    if (!promoModal) return;
+    promoModal.classList.add('opacity-0', 'pointer-events-none');
+    promoModal.classList.remove('opacity-100', 'pointer-events-auto');
+    if (promoModalCard) {
+      promoModalCard.classList.add('scale-95');
+      promoModalCard.classList.remove('scale-100');
+    }
+    sessionStorage.setItem('marrada_promo_dismissed', 'true');
+  }
+
+  const isDismissed = sessionStorage.getItem('marrada_promo_dismissed');
+  if (!isDismissed) {
+    setTimeout(() => {
+      openPromoModal();
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }, 1500);
+  }
+
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closePromoModal);
+  if (dismissModalBtn) dismissModalBtn.addEventListener('click', closePromoModal);
+  if (promoActionBtn) {
+    promoActionBtn.addEventListener('click', () => {
+      closePromoModal();
+    });
+  }
+
+  if (promoModal) {
+    promoModal.addEventListener('click', (e) => {
+      if (e.target === promoModal) {
+        closePromoModal();
+      }
     });
   }
 });
