@@ -316,3 +316,12 @@ section[id] { scroll-margin-top: 7.5rem; }
 @media (min-width: 640px) {
   .gremio-contact { flex-direction: row; align-items: center; justify-content: space-between; }
 }
+
+.gremio-logo-wrap {
+  padding: 1.25rem 1.75rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.28), rgba(14, 165, 233, 0.04) 70%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.gremio-logo-wrap img { display: block; }

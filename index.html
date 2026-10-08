@@ -421,15 +421,6 @@
         <p class="text-slate-600 text-base">Alugue a Churrasqueira 01 (32 pessoas), a Churrasqueira 02 com piscina (50 pessoas) ou as duas juntas, para até 82 pessoas.</p>
       </div>
 
-      <div class="max-w-xl mx-auto mb-10">
-        <div class="reserve-box">
-            <label for="bbq-date" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Escolha a data do seu churrasco</label>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <input type="date" id="bbq-date" class="input-field sm:max-w-[220px]">
-            </div>
-            <p class="text-xs text-slate-500 mt-3">Escolha a data e depois clique na churrasqueira desejada. A mensagem abre no WhatsApp com a data já preenchida.</p>
-          </div>
-      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
@@ -452,10 +443,16 @@
               <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Mesas para o terceiro tempo e confraternizações</span></li>
               <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Capacidade para 32 pessoas</span></li>
             </ul>
-            <button type="button" class="btn-primary mt-auto flex items-center justify-center gap-2" data-wa-space="Churrasqueira 01 - sem piscina (32 pessoas)" data-date-source="bbq-date">
-              <i data-lucide="calendar-check" class="w-4 h-4"></i>
-              <span>Verificar disponibilidade</span>
-            </button>
+            <div class="mt-auto space-y-2">
+              <label for="bbq1-date" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Escolha a data</label>
+              <div class="flex flex-wrap gap-2 items-stretch">
+                <input type="date" id="bbq1-date" class="input-field flex-1 min-w-[9.5rem] !w-auto">
+                <button type="button" class="btn-primary flex-1 min-w-[9.5rem] flex items-center justify-center gap-2 text-sm leading-tight text-center transition-all" data-wa-space="Churrasqueira 01 - sem piscina (32 pessoas)" data-date-source="bbq1-date">
+                  <i data-lucide="calendar-check" class="w-4 h-4 shrink-0 "></i>
+                  <span>Verificar disponibilidade</span>
+                </button>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -478,10 +475,16 @@
               <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Grelhas e mesas</span></li>
               <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Capacidade para 50 pessoas</span></li>
             </ul>
-            <button type="button" class="btn-primary mt-auto flex items-center justify-center gap-2" data-wa-space="Churrasqueira 02 - com piscina (50 pessoas)" data-date-source="bbq-date">
-              <i data-lucide="calendar-check" class="w-4 h-4"></i>
-              <span>Verificar disponibilidade</span>
-            </button>
+            <div class="mt-auto space-y-2">
+              <label for="bbq2-date" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Escolha a data</label>
+              <div class="flex flex-wrap gap-2 items-stretch">
+                <input type="date" id="bbq2-date" class="input-field flex-1 min-w-[9.5rem] !w-auto">
+                <button type="button" class="btn-primary flex-1 min-w-[9.5rem] flex items-center justify-center gap-2 text-sm leading-tight text-center transition-all" data-wa-space="Churrasqueira 02 - com piscina (50 pessoas)" data-date-source="bbq2-date">
+                  <i data-lucide="calendar-check" class="w-4 h-4 shrink-0 "></i>
+                  <span>Verificar disponibilidade</span>
+                </button>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -497,10 +500,16 @@
             <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-400 shrink-0"></i><span>Churrasqueira 01 (sem piscina) + Churrasqueira 02 (com piscina)</span></li>
             <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-400 shrink-0"></i><span>Ideal para confraternizações grandes</span></li>
           </ul>
-          <button type="button" class="mt-auto px-6 py-3 rounded-xl bg-white text-forest-900 font-extrabold hover:bg-slate-100 transition-all flex items-center justify-center gap-2" data-wa-space="Churrasqueiras 01 + 02 juntas (82 pessoas)" data-date-source="bbq-date">
-            <i data-lucide="calendar-check" class="w-4 h-4 text-marrada-orange"></i>
-            <span>Verificar disponibilidade</span>
-          </button>
+          <div class="mt-auto space-y-2">
+              <label for="bbq12-date" class="block text-xs font-bold uppercase tracking-wider text-slate-200">Escolha a data</label>
+              <div class="flex flex-wrap gap-2 items-stretch">
+                <input type="date" id="bbq12-date" class="input-field flex-1 min-w-[9.5rem] !w-auto">
+                <button type="button" class="bg-white text-forest-900 font-extrabold hover:bg-slate-100 rounded-xl px-4 py-3 flex-1 min-w-[9.5rem] flex items-center justify-center gap-2 text-sm leading-tight text-center transition-all" data-wa-space="Churrasqueiras 01 + 02 juntas (82 pessoas)" data-date-source="bbq12-date">
+                  <i data-lucide="calendar-check" class="w-4 h-4 shrink-0 text-marrada-orange"></i>
+                  <span>Verificar disponibilidade</span>
+                </button>
+              </div>
+            </div>
         </article>
       </div>
 
@@ -584,19 +593,21 @@
 
   <section id="escola-gremio" class="gremio-section py-12 sm:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-center">
 
-        <div class="lg:col-span-7">
+        <div class="order-1 lg:order-none lg:col-span-5 lg:col-start-8 lg:row-start-1 flex justify-center lg:self-end">
+          <div class="gremio-logo-wrap">
+            <img src="assets/gremiologo.svg" alt="Escudo do Grêmio" class="h-32 sm:h-44 w-auto">
+          </div>
+        </div>
+
+        <div class="order-2 lg:order-none lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:row-span-2">
           <div class="gremio-art">
             <img src="assets/artegremio.png" alt="Escola Oficial de Futebol do Grêmio Natal/RN" class="w-full h-auto block" loading="lazy">
           </div>
         </div>
 
-        <div class="lg:col-span-5 text-white space-y-6">
-          <div class="gremio-logo-wrap">
-            <img src="assets/gremiologo.svg" alt="Escudo do Grêmio" class="h-28 sm:h-36 w-auto">
-          </div>
-
+        <div class="order-3 lg:order-none lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:self-start text-white space-y-6">
           <div class="space-y-3">
             <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-400/40 text-sky-300 text-xs font-bold uppercase tracking-wider">
               <i data-lucide="award" class="w-4 h-4"></i> Escola Oficial
@@ -606,13 +617,6 @@
               Aqui tudo começa. Na Escola Oficial de Futebol do Grêmio, o talento encontra formação, disciplina e oportunidades para crescer dentro e fora de campo. É o caminho para quem sonha alto, trabalha, evolui e quer ir do RN para o Brasil com a força do Grêmio.
             </p>
             <p class="text-white font-bold text-base">Venha viver essa experiência: agende uma aula experimental e dê o primeiro passo.</p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3">
-            <div class="gremio-pillar"><i data-lucide="graduation-cap" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Formação</span></div>
-            <div class="gremio-pillar"><i data-lucide="shield-check" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Disciplina</span></div>
-            <div class="gremio-pillar"><i data-lucide="door-open" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Oportunidades</span></div>
-            <div class="gremio-pillar"><i data-lucide="star" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Grandes sonhos</span></div>
           </div>
 
           <div class="gremio-contact">
