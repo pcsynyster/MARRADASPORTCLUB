@@ -1,27 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicialização dos ícones Lucide
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
   }
 
-  // Controlo do Menu Móvel
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const WHATSAPP_RESERVAS = '5584994289028';
+  const pad = (n) => String(n).padStart(2, '0');
+  const now = new Date();
+  const todayIso = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  const parseIso = (iso) => {
+    const [y, m, d] = iso.split('-').map(Number);
+    return new Date(y, m - 1, d);
+  };
+  const formatBr = (iso) => iso.split('-').reverse().join('/');
+  const weekdayName = (iso) => parseIso(iso).toLocaleDateString('pt-BR', { weekday: 'long' });
+  const ASSINATURA = '_Mensagem enviada pelo site oficial do Marrada Sport Club._';
+  const openWhatsApp = (text) => {
+    const mensagem = `${text}\n\n${ASSINATURA}`;
+    window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_RESERVAS}&text=${encodeURIComponent(mensagem)}`, '_blank');
+  };
 
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+  document.querySelectorAll('input[type="date"]').forEach((input) => {
+    input.min = todayIso;
+  });
+
+  const chips = document.querySelectorAll('.chip');
+  const setActive = (id) => {
+    chips.forEach((chip) => {
+      const on = chip.getAttribute('href') === `#${id}`;
+      chip.classList.toggle('active', on);
+      if (on) chip.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
     });
+  };
 
-    mobileLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
       });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    chips.forEach((chip) => {
+      const target = document.querySelector(chip.getAttribute('href'));
+      if (target) observer.observe(target);
     });
   }
 
-  // Seletor Interativo de Espaço / Modalidade
+  document.querySelectorAll('[data-wa-space]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const input = document.getElementById(button.dataset.dateSource);
+      if (!input) return;
+      if (!input.value) {
+        input.required = true;
+        input.reportValidity();
+        return;
+      }
+      openWhatsApp(
+        `Olá! Gostaria de verificar a disponibilidade do espaço: ${button.dataset.waSpace}.\n` +
+        `Data escolhida no site: ${formatBr(input.value)} (${weekdayName(input.value)}).`
+      );
+    });
+  });
+
   const sportButtons = document.querySelectorAll('.sport-btn');
   const hiddenInput = document.getElementById('selected_sport');
 
@@ -35,156 +73,104 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Envio Inteligente para WhatsApp de Reservas Gerais
+  const dateField = document.getElementById('booking_date');
+  const shiftField = document.getElementById('booking_shift');
+  const fullDay = 'Diária Completa / Evento (A combinar)';
+  const weekdayShifts = ['Tarde (15h às 18h)', 'Noite (18h às 00h)', fullDay];
+  const weekendShifts = ['Manhã (07h às 12h)', 'Tarde (12h às 19h)', fullDay];
+
+  const renderShifts = () => {
+    if (!shiftField) return;
+    const day = dateField && dateField.value ? parseIso(dateField.value).getDay() : 1;
+    const options = day === 0 || day === 6 ? weekendShifts : weekdayShifts;
+    const previous = shiftField.value;
+    shiftField.innerHTML = '';
+    options.forEach((label) => {
+      const option = document.createElement('option');
+      option.value = label;
+      option.textContent = label;
+      shiftField.appendChild(option);
+    });
+    if (options.includes(previous)) shiftField.value = previous;
+  };
+
+  renderShifts();
+  if (dateField) dateField.addEventListener('change', renderShifts);
+
   const bookingForm = document.getElementById('booking-form');
 
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const modalidade = document.getElementById('selected_sport').value;
+      const modalidade = hiddenInput.value;
       const nome = document.getElementById('user_name').value.trim();
       const telefone = document.getElementById('user_phone').value.trim();
-      const data = document.getElementById('booking_date').value;
-      const turno = document.getElementById('booking_shift').value;
+      const data = dateField.value;
+      const turno = shiftField.value;
       const observacoes = document.getElementById('booking_notes').value.trim();
 
-      let dataFormatada = data;
-      if (data) {
-        const partes = data.split('-');
-        if (partes.length === 3) {
-          dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
-        }
-      }
-
-      // Emojis codificados nativamente para telemóveis
-      const iconReserva = String.fromCodePoint(0x1F3AF);
-      const iconUser = String.fromCodePoint(0x1F464);
-      const iconPhone = String.fromCodePoint(0x1F4F1);
-      const iconDate = String.fromCodePoint(0x1F4C5);
-      const iconClock = String.fromCodePoint(0x23F0);
-      const iconNotes = String.fromCodePoint(0x1F4DD);
-
-      let linhas = [
-        "*NOVA SOLICITAÇÃO DE RESERVA - MARRADA SPORT CLUB*",
-        "",
-        `${iconReserva} *Espaço / Modalidade:* ${modalidade}`,
-        `${iconUser} *Nome do Responsável:* ${nome}`,
-        `${iconPhone} *WhatsApp:* ${telefone}`,
-        `${iconDate} *Data Pretendida:* ${dataFormatada}`,
-        `${iconClock} *Turno / Período:* ${turno}`
+      const linhas = [
+        '*NOVA SOLICITAÇÃO DE RESERVA - MARRADA SPORT CLUB*',
+        '',
+        `*Espaço / Modalidade:* ${modalidade}`,
+        `*Nome do Responsável:* ${nome}`,
+        `*WhatsApp:* ${telefone}`,
+        `*Data Pretendida:* ${formatBr(data)} (${weekdayName(data)})`,
+        `*Turno / Período:* ${turno}`
       ];
 
       if (observacoes) {
-        linhas.push(`${iconNotes} *Observações / Convidados:* ${observacoes}`);
+        linhas.push(`*Observações / Convidados:* ${observacoes}`);
       }
 
-      linhas.push("", "_Mensagem enviada através do formulário do site oficial Marrada._");
-
-      const mensagemFinal = linhas.join("\n");
-      // NÚMERO EXCLUSIVO DE RESERVAS GERAIS:
-      const numeroReservasGerais = "5584994289028";
-
-      const urlFinal = `https://api.whatsapp.com/send?phone=${numeroReservasGerais}&text=${encodeURIComponent(mensagemFinal)}`;
-      window.open(urlFinal, '_blank');
+      openWhatsApp(linhas.join('\n'));
     });
   }
 
-  // CONTROLO DO CARROSSEL DE EVENTOS (ARRASITAR / BOTÕES / PONTOS)
-  const carousel = document.getElementById('events-carousel');
-  const prevBtn = document.getElementById('prev-event-slide');
-  const nextBtn = document.getElementById('next-event-slide');
-  const dots = document.querySelectorAll('.carousel-dot');
-
-  if (carousel) {
-    const updateDots = () => {
-      const slideWidth = carousel.clientWidth;
-      const currentIndex = Math.round(carousel.scrollLeft / slideWidth);
-
-      dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
-          dot.classList.remove('bg-white/50');
-          dot.classList.add('bg-white', 'scale-125');
-        } else {
-          dot.classList.remove('bg-white', 'scale-125');
-          dot.classList.add('bg-white/50');
-        }
-      });
-    };
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
-      });
-    }
-
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-index'), 10);
-        carousel.scrollTo({ left: carousel.clientWidth * index, behavior: 'smooth' });
-      });
-    });
-
-    carousel.addEventListener('scroll', updateDots);
-  }
-
-  // LÓGICA DO MODAL PROMOCIONAL
-  const promoModal = document.getElementById('promo-modal');
-  const promoModalCard = document.getElementById('promo-modal-card');
+  const eventModal = document.getElementById('event-modal');
+  const eventModalCard = document.getElementById('event-modal-card');
   const closeModalBtn = document.getElementById('close-modal-btn');
   const dismissModalBtn = document.getElementById('dismiss-modal-btn');
-  const promoActionBtn = document.getElementById('promo-action-btn');
+  const eventActionBtn = document.getElementById('event-action-btn');
 
-  function openPromoModal() {
-    if (!promoModal) return;
-    promoModal.classList.remove('opacity-0', 'pointer-events-none');
-    promoModal.classList.add('opacity-100', 'pointer-events-auto');
-    if (promoModalCard) {
-      promoModalCard.classList.remove('scale-95');
-      promoModalCard.classList.add('scale-100');
+  function openEventModal() {
+    if (!eventModal) return;
+    eventModal.classList.remove('opacity-0', 'pointer-events-none');
+    eventModal.classList.add('opacity-100', 'pointer-events-auto');
+    if (eventModalCard) {
+      eventModalCard.classList.remove('scale-95');
+      eventModalCard.classList.add('scale-100');
     }
   }
 
-  function closePromoModal() {
-    if (!promoModal) return;
-    promoModal.classList.add('opacity-0', 'pointer-events-none');
-    promoModal.classList.remove('opacity-100', 'pointer-events-auto');
-    if (promoModalCard) {
-      promoModalCard.classList.add('scale-95');
-      promoModalCard.classList.remove('scale-100');
+  function closeEventModal() {
+    if (!eventModal) return;
+    eventModal.classList.add('opacity-0', 'pointer-events-none');
+    eventModal.classList.remove('opacity-100', 'pointer-events-auto');
+    if (eventModalCard) {
+      eventModalCard.classList.add('scale-95');
+      eventModalCard.classList.remove('scale-100');
     }
-    sessionStorage.setItem('marrada_promo_dismissed', 'true');
+    sessionStorage.setItem('marrada_event_modal_dismissed', 'true');
   }
 
-  const isDismissed = sessionStorage.getItem('marrada_promo_dismissed');
-  if (!isDismissed) {
+  if (!sessionStorage.getItem('marrada_event_modal_dismissed')) {
     setTimeout(() => {
-      openPromoModal();
+      openEventModal();
       if (typeof lucide !== 'undefined') {
         lucide.createIcons();
       }
     }, 1500);
   }
 
-  if (closeModalBtn) closeModalBtn.addEventListener('click', closePromoModal);
-  if (dismissModalBtn) dismissModalBtn.addEventListener('click', closePromoModal);
-  if (promoActionBtn) {
-    promoActionBtn.addEventListener('click', () => {
-      closePromoModal();
-    });
-  }
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeEventModal);
+  if (dismissModalBtn) dismissModalBtn.addEventListener('click', closeEventModal);
+  if (eventActionBtn) eventActionBtn.addEventListener('click', closeEventModal);
 
-  if (promoModal) {
-    promoModal.addEventListener('click', (e) => {
-      if (e.target === promoModal) {
-        closePromoModal();
-      }
+  if (eventModal) {
+    eventModal.addEventListener('click', (e) => {
+      if (e.target === eventModal) closeEventModal();
     });
   }
 });

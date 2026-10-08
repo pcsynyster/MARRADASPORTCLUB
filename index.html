@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://marradasportclub.com.br/" />
   <meta property="og:title" content="Marrada Sport Club | Complexo Esportivo em Parnamirim" />
-  <meta property="og:description" content="Salão de festas climatizado, churrasqueiras com piscina, 09 quadras de areia, campos Fut7 e o tradicional Marradão de grama natural." />
+  <meta property="og:description" content="Salão de festas para até 100 pessoas, churrasqueiras com e sem piscina, 09 quadras de areia, campos Fut7 e o tradicional Marradão de grama natural." />
   
   <!-- Link direto e absoluto para a imagem de capa -->
   <meta property="og:image" content="https://marradasportclub.com.br/assets/futsetvistacima.png" />
@@ -27,7 +27,7 @@
   <!-- Compatibilidade adicional para Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Marrada Sport Club | Complexo Esportivo em Parnamirim" />
-  <meta name="twitter:description" content="Salão de festas climatizado, churrasqueiras com piscina privativa, quadras de areia e grama sintética/natural." />
+  <meta name="twitter:description" content="Salão de festas para até 100 pessoas, churrasqueiras com e sem piscina, quadras de areia e grama sintética/natural." />
   <meta name="twitter:image" content="https://marradasportclub.com.br/assets/futsetvistacima.png" />
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,77 +67,62 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="font-medium">Salão Climatizado &amp; Espaços Gourmet com Piscina disponíveis para reservas</span>
+        <span class="font-medium">Salão de Festas &amp; Churrasqueiras disponíveis para reservas</span>
       </div>
       <div class="flex items-center gap-4 text-xs text-slate-300">
         <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-marrada-orange"></i> Parnamirim - RN</span>
-        <a href="https://api.whatsapp.com/send?phone=5584994289028" target="_blank" class="hover:text-emerald-400 font-semibold transition-colors flex items-center gap-1">
+        <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" class="hover:text-emerald-400 font-semibold transition-colors flex items-center gap-1">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i> (84) 99428-9028 (Reservas)
         </a>
       </div>
     </div>
   </div>
 
-  <!-- HEADER NAVEGAÇÃO -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all" id="main-header">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <img src="assets/logo.png" alt="Marrada Sport Club" class="h-14 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/180x60/133e2a/ffffff?text=MARRADA+SPORT+CLUB'">
-      </a>
-
-      <!-- Menu Desktop -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
-        <a href="#estrutura" class="hover:text-forest-700 transition-colors">Estrutura &amp; Quadras</a>
-        <a href="#eventos" class="hover:text-forest-700 transition-colors">Festas, Piscina &amp; Churrasco</a>
-        <a href="#promocao" class="hover:text-forest-700 transition-colors">Promoção Beach Tennis</a>
-        <a href="#copa-fut7" class="hover:text-forest-700 transition-colors">Copa Fut7 Empresarial</a>
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <a href="#" class="flex items-center"><img src="assets/logo.png" alt="Marrada Sport Club" class="h-10 sm:h-14 w-auto object-contain" onerror="this.src='https://placehold.co/180x60/133e2a/ffffff?text=MARRADA+SPORT+CLUB'"></a>
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold text-slate-600">
+        <a href="#estrutura" class="hover:text-forest-700 transition-colors">Estrutura</a>
+        <a href="#agendamento" class="hover:text-forest-700 transition-colors">Quadras</a>
+        <a href="#salao" class="hover:text-forest-700 transition-colors">Salão de Festas</a>
+        <a href="#churrasqueiras" class="hover:text-forest-700 transition-colors">Churrasqueiras</a>
+        <a href="#copa-fut7" class="hover:text-forest-700 transition-colors">Copa Fut7</a>
+        <a href="#escola-gremio" class="hover:text-forest-700 transition-colors">Escola do Grêmio</a>
         <a href="#localizacao" class="hover:text-forest-700 transition-colors">Como Chegar</a>
       </nav>
-
-      <!-- Botão CTA -->
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="#agendamento" class="btn-primary flex items-center gap-2">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
-          <span>Reservar Espaço</span>
-        </a>
-      </div>
-
-      <!-- Menu Hambúrguer Mobile -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-forest-800" aria-label="Abrir Menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-    </div>
-
-    <!-- Dropdown Mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 bg-white px-6 py-5 shadow-xl space-y-4">
-      <a href="#estrutura" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Estrutura &amp; Quadras</a>
-      <a href="#eventos" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Festas, Piscina &amp; Churrasco</a>
-      <a href="#promocao" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Promoção Beach Tennis</a>
-      <a href="#copa-fut7" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Copa Fut7 Empresarial</a>
-      <a href="#localizacao" class="block font-semibold text-slate-800 py-1 hover:text-forest-700 mobile-link">Como Chegar</a>
-      <a href="#agendamento" class="btn-primary w-full text-center flex items-center justify-center gap-2 mt-3 mobile-link">
+      <a href="#agendamento" class="btn-primary flex items-center gap-2 text-sm !py-2.5 !px-4">
         <i data-lucide="calendar-check" class="w-4 h-4"></i>
-        <span>Reservar Espaço</span>
+        <span>Reservar Quadra</span>
       </a>
     </div>
+    <nav class="lg:hidden border-t border-slate-100 overflow-x-auto no-scrollbar">
+      <div class="flex gap-2 px-4 py-2 w-max">
+        <a href="#estrutura" class="chip">Estrutura</a>
+        <a href="#agendamento" class="chip">Quadras</a>
+        <a href="#salao" class="chip">Salão</a>
+        <a href="#churrasqueiras" class="chip">Churrasqueiras</a>
+        <a href="#copa-fut7" class="chip">Copa Fut7</a>
+        <a href="#escola-gremio" class="chip">Escola do Grêmio</a>
+        <a href="#localizacao" class="chip">Como chegar</a>
+      </div>
+    </nav>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-50 to-white">
+  <section class="relative overflow-hidden pt-8 pb-12 sm:pt-12 sm:pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-50 to-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-xs font-bold uppercase tracking-wider">
             <i data-lucide="award" class="w-4 h-4 text-emerald-600"></i>
             Complexo Esportivo &amp; Lazer em Parnamirim
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Esporte, salão climatizado e <span class="text-transparent bg-clip-text bg-gradient-to-r from-forest-800 to-emerald-600">churrasco com piscina</span>.
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Esporte, salão climatizado e <span class="text-transparent bg-clip-text bg-gradient-to-r from-forest-800 to-emerald-600">churrasqueiras</span>.
           </h1>
           <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            A melhor infraestrutura da região: 9 quadras de areia, campos Fut7, o tradicional Marradão de grama natural, Salão de Festas Climatizado, campinho kids e 2 áreas de churrasco gourmet exclusivas.
+            A melhor infraestrutura da região: 9 quadras de areia, campos Fut7, o tradicional Marradão de grama natural, Salão de Festas Climatizado para até 100 pessoas, Campinho Kids com playground e 2 churrasqueiras, com e sem piscina.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
@@ -145,7 +130,7 @@
               <i data-lucide="zap" class="w-4 h-4"></i>
               <span>Consultar Disponibilidade</span>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20quadras%20e%20espa%C3%A7os%20de%20evento" target="_blank" class="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2">
+            <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20quadras%20e%20espa%C3%A7os%20de%20evento%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" class="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2">
               <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
               <span>Falar no WhatsApp</span>
             </a>
@@ -161,8 +146,8 @@
               <p class="text-xs text-slate-500 font-medium">Áreas de Churrasqueira</p>
             </div>
             <div>
-              <p class="text-2xl lg:text-3xl font-black text-slate-900">100%</p>
-              <p class="text-xs text-slate-500 font-medium">Salão Climatizado</p>
+              <p class="text-2xl lg:text-3xl font-black text-slate-900">100</p>
+              <p class="text-xs text-slate-500 font-medium">Pessoas no Salão</p>
             </div>
           </div>
         </div>
@@ -178,7 +163,7 @@
                 <p class="text-xs text-slate-200">Localização privilegiada com fácil acesso</p>
               </div>
             </div>
-            <div class="absolute -bottom-4 -right-4 bg-forest-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-forest-700 flex items-center gap-3">
+            <div class="absolute bottom-2 right-2 sm:-bottom-4 sm:-right-4 bg-forest-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-forest-700 flex items-center gap-3">
               <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i>
               <div>
                 <p class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Alto Padrão</p>
@@ -193,26 +178,26 @@
   </section>
 
   <!-- BENTO GRID: ESTRUTURA COMPLETA -->
-  <section id="estrutura" class="py-20 bg-white border-t border-slate-200">
+  <section id="estrutura" class="py-12 sm:py-20 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <p class="text-emerald-700 font-bold text-xs uppercase tracking-widest">Infraestrutura Esportiva &amp; Social</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">O espaço perfeito para o seu jogo e comemoração</h2>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">O espaço perfeito para o seu jogo e comemoração</h2>
         <p class="text-slate-600 text-base font-normal">Ambientes projetados tanto para partidas de alta intensidade quanto para a resenha perfeita com família e amigos.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Card 1: 09 Quadras de Areia -->
         <div class="card-bento group">
-          <div class="h-64 overflow-hidden relative">
+          <div class="h-48 sm:h-64 overflow-hidden relative">
             <img src="assets/beach-tennis.jpg" alt="09 Quadras de Areia Beach Tennis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1000&q=80'">
             <div class="absolute top-4 left-4">
-              <span class="bg-forest-900/90 text-white backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">09 Quadras de Areia</span>
+              <span class="highlight-badge bg-forest-900/90"><strong>9</strong> quadras de areia</span>
             </div>
           </div>
-          <div class="p-6 space-y-2">
+          <div class="p-5 sm:p-6 space-y-3">
             <h3 class="text-lg font-bold text-slate-900">Beach Tennis, Futevôlei &amp; Vôlei</h3>
             <p class="text-slate-600 text-sm leading-relaxed">
               Areia tratada e drenagem eficiente para máximo rendimento, com iluminação LED para jogos noturnos.
@@ -222,13 +207,13 @@
 
         <!-- Card 2: Marradão Grama Natural -->
         <div class="card-bento group">
-          <div class="h-64 overflow-hidden relative">
+          <div class="h-48 sm:h-64 overflow-hidden relative">
             <img src="assets/marradao.jpg" alt="Campo de Grama Natural Marradão" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1556056504-5c7696c4c28d?auto=format&fit=crop&w=800&q=80'">
             <div class="absolute top-4 left-4">
-              <span class="bg-marrada-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Exclusivo</span>
+              <span class="highlight-badge bg-marrada-orange">Exclusivo</span>
             </div>
           </div>
-          <div class="p-6 space-y-2">
+          <div class="p-5 sm:p-6 space-y-3">
             <h3 class="text-lg font-bold text-slate-900">O "Marradão"</h3>
             <p class="text-slate-600 text-sm leading-relaxed">
               Campo oficial de grama natural tratada periodicamente para os amantes do futebol tradicional de chuteira.
@@ -238,10 +223,11 @@
 
         <!-- Card 3: Campos Fut7 Society -->
         <div class="card-bento group">
-          <div class="h-64 overflow-hidden relative">
+          <div class="h-48 sm:h-64 overflow-hidden relative">
             <img src="assets/futsetcampo2.png" alt="Campos de Grama Sintética Fut7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80'">
+            <div class="absolute top-4 left-4"><span class="highlight-badge bg-emerald-600">FUT7 — medidas oficiais</span></div>
           </div>
-          <div class="p-6 space-y-2">
+          <div class="p-5 sm:p-6 space-y-3">
             <h3 class="text-lg font-bold text-slate-900">Complexo Fut7 Society</h3>
             <p class="text-slate-600 text-sm leading-relaxed">
               Grama sintética de padrão profissional com amortecimento de impacto, iluminação de foco e redes novas.
@@ -251,48 +237,16 @@
 
         <!-- Card 4: Salão de Festas Climatizado & Kids -->
         <div class="card-bento group">
-          <div class="h-64 overflow-hidden relative">
+          <div class="h-48 sm:h-64 overflow-hidden relative">
             <img src="assets/climatizada.jpg" alt="Salão de Festas Climatizado e Campinho Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
             <div class="absolute top-4 left-4">
-              <span class="bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">100% Climatizado</span>
+              <span class="highlight-badge bg-sky-600"><strong>100</strong> Pessoas no total</span>
             </div>
           </div>
-          <div class="p-6 space-y-2">
+          <div class="p-5 sm:p-6 space-y-3">
             <h3 class="text-lg font-bold text-slate-900">Salão de Festas &amp; Área Kids</h3>
             <p class="text-slate-600 text-sm leading-relaxed">
-              Salão fechado e climatizado com ar-condicionado, banheiros privativos, bar e campinho kids com grama sintética anexo.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 5: Churrasqueira 01 com Piscina -->
-        <div class="card-bento group">
-          <div class="h-64 overflow-hidden relative bg-slate-100">
-            <img src="assets/churrascaria01.png" alt="Churrasqueira com Piscina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80'">
-            <div class="absolute top-4 left-4">
-              <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Churrasqueira + Piscina</span>
-            </div>
-          </div>
-          <div class="p-6 space-y-2">
-            <h3 class="text-lg font-bold text-slate-900">Espaço Gourmet com Piscina</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Churrasqueira completa com piscina privativa, bancada de apoio, grelhas e mesas para a resenha ideal de fim de semana.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 6: Churrasqueira 02 Gourmet -->
-        <div class="card-bento group">
-          <div class="h-64 overflow-hidden relative bg-slate-100">
-            <img src="assets/churrasqueira02.jpg" alt="Churrasqueira Tradicional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
-            <div class="absolute top-4 left-4">
-              <span class="bg-marrada-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Churrasqueira Padrão</span>
-            </div>
-          </div>
-          <div class="p-6 space-y-2">
-            <h3 class="text-lg font-bold text-slate-900">Churrasqueira Gourmet (Sem Piscina)</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Área coberta e estruturada para o terceiro tempo após a partida, confraternizações de times e churrasco de amigos.
+              Salão com 50 pessoas na área climatizada e 50 na área externa, até 100 pessoas no total. Inclui Campinho Kids com playground.
             </p>
           </div>
         </div>
@@ -301,201 +255,268 @@
     </div>
   </section>
 
-  <!-- SEÇÃO EVENTOS, SALÃO CLIMATIZADO & CHURRASQUEIRAS COM/SEM PISCINA (COM CARROSSEL DE FOTOS) -->
-  <section id="eventos" class="py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
+  <section id="agendamento" class="py-12 sm:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-3 mb-8 sm:mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-700">Quadras &amp; Modalidades Esportivas</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Faça sua pré-reserva</h2>
+        <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">Escolha a modalidade, informe seus dados e a data. A solicitação abre no WhatsApp de reservas já organizada.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-5 sm:p-10 border border-slate-200 shadow-xl">
+        <form id="booking-form" class="space-y-8">
+          <fieldset>
+            <div class="step-title"><span class="step-num">1</span><h3>Escolha a modalidade</h3></div>
+            <div class="grid grid-cols-2 gap-3">
+            <button type="button" data-sport="FUT7 (grama sintética, medidas oficiais)" class="sport-btn active">
+              <i data-lucide="trophy" class="w-6 h-6 mx-auto mb-2 text-emerald-600"></i>
+              <span class="text-sm font-extrabold block text-slate-900">FUT7</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Medidas oficiais</span>
+            </button>
+            <button type="button" data-sport="Quadra de areia (9 quadras)" class="sport-btn">
+              <i data-lucide="sun" class="w-6 h-6 mx-auto mb-2 text-amber-500"></i>
+              <span class="text-sm font-extrabold block text-slate-900">Quadra de areia</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">9 quadras de areia</span>
+            </button>
+            <button type="button" data-sport="Futemesa" class="sport-btn">
+              <i data-lucide="circle-dot" class="w-6 h-6 mx-auto mb-2 text-sky-600"></i>
+              <span class="text-sm font-extrabold block text-slate-900">Futemesa</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Mesa e resenha</span>
+            </button>
+            <button type="button" data-sport="Marradão (grama natural)" class="sport-btn">
+              <i data-lucide="trees" class="w-6 h-6 mx-auto mb-2 text-forest-700"></i>
+              <span class="text-sm font-extrabold block text-slate-900">Marradão</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Grama natural</span>
+            </button>
+            </div>
+            <input type="hidden" name="selected_sport" id="selected_sport" value="FUT7 (grama sintética, medidas oficiais)">
+          </fieldset>
+
+          <fieldset>
+            <div class="step-title"><span class="step-num">2</span><h3>Seus dados</h3></div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="user_name" class="field-label">Nome do responsável</label>
+                <input type="text" id="user_name" required placeholder="Seu nome completo" class="input-field">
+              </div>
+              <div>
+                <label for="user_phone" class="field-label">Seu WhatsApp</label>
+                <input type="tel" id="user_phone" required placeholder="(84) 90000-0000" class="input-field">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <div class="step-title"><span class="step-num">3</span><h3>Data e horário</h3></div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="booking_date" class="field-label">Data pretendida</label>
+                <input type="date" id="booking_date" required class="input-field">
+              </div>
+              <div>
+                <label for="booking_shift" class="field-label">Turno / período</label>
+                <select id="booking_shift" required class="input-field"></select>
+              </div>
+            </div>
+            <div class="mt-4">
+              <label for="booking_notes" class="field-label">Observações (opcional)</label>
+              <textarea id="booking_notes" rows="3" placeholder="Ex: time com 14 jogadores, jogo às 20h" class="input-field resize-none"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="space-y-3">
+            <button type="submit" class="btn-primary w-full flex items-center justify-center gap-2 text-base !py-4">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>Enviar pré-reserva pelo WhatsApp</span>
+            </button>
+            <p class="text-center text-xs text-slate-500">Segunda a sexta: 15h às 00h. Sábado e domingo: 7h às 19h. A reserva é confirmada pela equipe no WhatsApp.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="salao" class="py-12 sm:py-20 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Galeria Visual do Espaço de Eventos com Carrossel / Slider -->
-        <div class="lg:col-span-6 space-y-4">
-          
-          <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900 aspect-[4/3] group">
-            
-            <!-- Slides Container (Deslize horizontal nativo) -->
-            <div id="events-carousel" class="flex w-full h-full overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
-              
-              <!-- Slide 1: Salão Climatizado & Kids -->
-              <div class="w-full h-full flex-shrink-0 relative snap-start">
-                <img src="assets/climatizada.jpg" alt="Salão Climatizado e Campinho Kids Marrada" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 text-white">
-                  <span class="inline-block px-2.5 py-1 rounded bg-sky-600 text-[11px] font-bold uppercase tracking-wider mb-1">Totalmente Climatizado</span>
-                  <p class="font-bold text-lg">Salão de Festas &amp; Campinho Kids</p>
-                  <p class="text-xs text-slate-200">Conforto térmico, segurança e diversão para as crianças</p>
-                </div>
-              </div>
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-              <!-- Slide 2: Churrasqueira com Piscina -->
-              <div class="w-full h-full flex-shrink-0 relative snap-start">
-                <img src="assets/churrascaria01.png" alt="Churrasqueira com Piscina Privativa" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80'">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 text-white">
-                  <span class="inline-block px-2.5 py-1 rounded bg-emerald-600 text-[11px] font-bold uppercase tracking-wider mb-1">Churrasqueira + Piscina</span>
-                  <p class="font-bold text-lg">Espaço Gourmet com Piscina Privativa</p>
-                  <p class="text-xs text-slate-200">Área exclusiva para churrasco em família e festas</p>
-                </div>
-              </div>
-
-              <!-- Slide 3: Churrasqueira Gourmet Pós-Jogo -->
-              <div class="w-full h-full flex-shrink-0 relative snap-start">
-                <img src="assets/churrasqueira02.jpg" alt="Churrasqueira Tradicional Gourmet" class="w-full h-full object-cover onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 text-white">
-                  <span class="inline-block px-2.5 py-1 rounded bg-marrada-orange text-[11px] font-bold uppercase tracking-wider mb-1">Churrasqueira Padrão</span>
-                  <p class="font-bold text-lg">Churrasqueira Gourmet (Sem Piscina)</p>
-                  <p class="text-xs text-slate-200">Estrutura coberta perfeita para o terceiro tempo dos jogos</p>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Botões de Navegação Anterior e Seguinte -->
-            <button type="button" id="prev-event-slide" aria-label="Foto Anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-105 backdrop-blur-sm z-10">
-              <i data-lucide="chevron-left" class="w-5 h-5"></i>
-            </button>
-            <button type="button" id="next-event-slide" aria-label="Próxima Foto" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-all opacity-80 hover:opacity-100 hover:scale-105 backdrop-blur-sm z-10">
-              <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </button>
-
-            <!-- Indicadores (Pontos inferiores) -->
-            <div class="absolute bottom-2 right-4 flex items-center gap-1.5 z-10" id="carousel-dots">
-              <button type="button" data-index="0" class="carousel-dot w-2 h-2 rounded-full bg-white transition-all scale-125" aria-label="Ir para slide 1"></button>
-              <button type="button" data-index="1" class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" aria-label="Ir para slide 2"></button>
-              <button type="button" data-index="2" class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" aria-label="Ir para slide 3"></button>
-            </div>
-
-          </div>
-
-          <!-- Cards Comparativos das Churrasqueiras -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
-              <div class="p-2.5 rounded-xl bg-emerald-50 text-emerald-700 shrink-0 mt-0.5">
-                <i data-lucide="waves" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-bold text-sm text-slate-900">Churrasqueira 01 + Piscina</p>
-                <p class="text-xs text-slate-500">Piscina privativa integrada para churrasco em família e festas.</p>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
-              <div class="p-2.5 rounded-xl bg-orange-50 text-marrada-orange shrink-0 mt-0.5">
-                <i data-lucide="flame" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-bold text-sm text-slate-900">Churrasqueira 02 (Sem Piscina)</p>
-                <p class="text-xs text-slate-500">Espaço gourmet coberto, ideal para o pós-jogo e resenha dos jogos.</p>
-              </div>
+        <div class="lg:col-span-6">
+          <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900 aspect-[4/3]">
+            <img src="assets/climatizada.jpg" alt="Salão de Festas Climatizado e Campinho Kids Marrada" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="inline-block px-2.5 py-1 rounded bg-sky-600 text-[11px] font-bold uppercase tracking-wider mb-1">Salão de Festas</span>
+              <p class="font-bold text-lg">Até 100 pessoas</p>
             </div>
           </div>
-
         </div>
 
         <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-            <i data-lucide="party-popper" class="w-4 h-4 text-emerald-600"></i>
-            Eventos, Aniversários &amp; Confraternizações
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="party-popper" class="w-4 h-4 text-sky-600"></i>
+            Aniversários, Confraternizações e Eventos Sociais.
           </div>
-          
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Comemore com conforto no Salão Climatizado ou no Espaço Churrasqueira
-          </h2>
-          
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Comemore com conforto no Salão Climatizado</h2>
           <p class="text-slate-600 text-base leading-relaxed">
-            Seja um aniversário infantil com piscina e campinho, um batizado em ambiente climatizado ou o tradicional churrasco da equipe após a partida: no Marrada você tem o espaço ideal para o seu evento.
+            50 pessoas na área climatizada + 50 pessoas na área externa, totalizando até 100 pessoas. Um aniversário infantil com campinho e playground com ambiente climatizado: o salão acomoda a sua festa.
           </p>
 
-          <div class="space-y-3 pt-2">
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="p-3 sm:p-4 rounded-2xl bg-sky-50 border border-sky-100">
+              <p class="text-3xl font-black text-sky-900 leading-none">50</p>
+              <p class="text-xs font-semibold text-sky-800 mt-1">Área climatizada</p>
+            </div>
+            <div class="p-3 sm:p-4 rounded-2xl bg-amber-50 border border-amber-100">
+              <p class="text-3xl font-black text-amber-900 leading-none">50</p>
+              <p class="text-xs font-semibold text-amber-800 mt-1">Área externa</p>
+            </div>
+            <div class="p-3 sm:p-4 rounded-2xl bg-forest-900 text-white">
+              <p class="text-3xl font-black leading-none">100</p>
+              <p class="text-xs font-semibold text-slate-200 mt-1">Capacidade total</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
             <div class="flex items-start gap-3">
-              <div class="p-1 rounded-full bg-sky-100 text-sky-800 mt-1">
-                <i data-lucide="snowflake" class="w-4 h-4"></i>
-              </div>
+              <div class="p-1 rounded-full bg-sky-100 text-sky-800 mt-1"><i data-lucide="snowflake" class="w-4 h-4"></i></div>
               <div>
-                <p class="font-bold text-sm text-slate-900">Salão Social 100% Climatizado</p>
+                <p class="font-bold text-sm text-slate-900">Área climatizada</p>
                 <p class="text-xs text-slate-500">Ar-condicionado potente, iluminação suave, bar de apoio, mesas, cadeiras e banheiros privativos.</p>
               </div>
             </div>
-
             <div class="flex items-start gap-3">
-              <div class="p-1 rounded-full bg-emerald-100 text-emerald-700 mt-1">
-                <i data-lucide="waves" class="w-4 h-4"></i>
-              </div>
+              <div class="p-1 rounded-full bg-amber-100 text-amber-700 mt-1"><i data-lucide="smile" class="w-4 h-4"></i></div>
               <div>
-                <p class="font-bold text-sm text-slate-900">Churrasqueira com Piscina Privativa</p>
-                <p class="text-xs text-slate-500">Área externa reservada com piscina para convidados, bancadas de corte, pia e grelhas.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <div class="p-1 rounded-full bg-amber-100 text-amber-700 mt-1">
-                <i data-lucide="smile" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <p class="font-bold text-sm text-slate-900">Campinho Kids Integrado</p>
-                <p class="text-xs text-slate-500">Mini campo de grama sintética com traves e telas de proteção para a garotada jogar em segurança.</p>
+                <p class="font-bold text-sm text-slate-900">Campinho Kids com playground</p>
+                <p class="text-xs text-slate-500">Mini campo de grama sintética com traves e telas de proteção, mais playground para a garotada brincar em segurança.</p>
               </div>
             </div>
           </div>
 
-          <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
-            <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20valores%20e%20datas%20para%20o%20Sal%C3%A3o%20Climatizado%20ou%20Churrasqueiras" target="_blank" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2">
-              <i data-lucide="calendar" class="w-4 h-4"></i>
-              <span>Consultar Datas para Evento</span>
-            </a>
-            <a href="#agendamento" class="btn-outline w-full sm:w-auto text-center flex items-center justify-center gap-2">
-              <span>Fazer Pré-Reserva Online</span>
-            </a>
+          <div class="reserve-box">
+            <label for="salao-date" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Escolha a data da sua festa</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="date" id="salao-date" class="input-field sm:max-w-[220px]">
+              <button type="button" class="btn-primary w-full sm:w-auto flex items-center justify-center gap-2" data-wa-space="Salão de Festas (até 100 pessoas)" data-date-source="salao-date">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                <span>Verificar disponibilidade</span>
+              </button>
+            </div>
           </div>
-
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DESTAQUE: PROMOÇÃO BEACH TENNIS -->
-  <section id="promocao" class="py-16 bg-slate-50 border-t border-b border-slate-200/80">
+  <section id="churrasqueiras" class="py-12 sm:py-20 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-r from-forest-900 to-forest-800 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
-        
-        <div class="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-8 space-y-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-marrada-orange text-white text-xs font-bold uppercase tracking-wider">
-              <i data-lucide="tag" class="w-3.5 h-3.5"></i> Promoção Especial Beach Tennis
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Junte seu quarteto e venha jogar na areia do Marrada</h2>
-            <p class="text-slate-200 text-base max-w-2xl leading-relaxed">
-              Preencha o horário de preferência para você e seus 3 amigos. Nossa equipe entra em contato com prioridade para confirmar a disponibilidade da quadra com condições especiais.
-            </p>
-            <div class="flex flex-wrap gap-4 pt-2 text-sm text-slate-300">
-              <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Raquetes e bolinhas disponíveis</span>
-              <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Vestiários equipados</span>
-              <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Chuveirões pós-jogo</span>
-            </div>
-          </div>
-          <div class="lg:col-span-4 flex justify-center lg:justify-end">
-            <a href="#agendamento" class="px-8 py-4 rounded-xl bg-white text-forest-900 font-extrabold text-base hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center gap-2">
-              <i data-lucide="send" class="w-5 h-5 text-marrada-orange"></i>
-              <span>Solicitar Horário</span>
-            </a>
-          </div>
-        </div>
 
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="flame" class="w-4 h-4 text-marrada-orange"></i>
+          Churrasqueiras
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Duas churrasqueiras, uma ao lado da outra</h2>
+        <p class="text-slate-600 text-base">Alugue a Churrasqueira 01 (32 pessoas), a Churrasqueira 02 com piscina (50 pessoas) ou as duas juntas, para até 82 pessoas.</p>
       </div>
+
+      <div class="max-w-xl mx-auto mb-10">
+        <div class="reserve-box">
+            <label for="bbq-date" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Escolha a data do seu churrasco</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="date" id="bbq-date" class="input-field sm:max-w-[220px]">
+            </div>
+            <p class="text-xs text-slate-500 mt-3">Escolha a data e depois clique na churrasqueira desejada. A mensagem abre no WhatsApp com a data já preenchida.</p>
+          </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <article class="card-bento flex flex-col">
+          <div class="h-56 overflow-hidden relative bg-slate-100">
+            <img src="assets/churrasqueira02.jpg" alt="Churrasqueira 01 sem piscina" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80'">
+            <span class="absolute top-4 left-4 bg-marrada-orange text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Sem piscina</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-1">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-xl font-extrabold text-slate-900">Churrasqueira 01</h3>
+              <div class="text-right shrink-0">
+                <p class="text-4xl font-black text-forest-800 leading-none">32</p>
+                <p class="text-xs text-slate-500 font-semibold">pessoas</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Área coberta e estruturada</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Churrasqueira completa com grelhas</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Mesas para o terceiro tempo e confraternizações</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Capacidade para 32 pessoas</span></li>
+            </ul>
+            <button type="button" class="btn-primary mt-auto flex items-center justify-center gap-2" data-wa-space="Churrasqueira 01 - sem piscina (32 pessoas)" data-date-source="bbq-date">
+              <i data-lucide="calendar-check" class="w-4 h-4"></i>
+              <span>Verificar disponibilidade</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="card-bento flex flex-col">
+          <div class="h-56 overflow-hidden relative bg-slate-100">
+            <img src="assets/churrascaria01.png" alt="Churrasqueira 02 com piscina" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80'">
+            <span class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Com piscina</span>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-1">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-xl font-extrabold text-slate-900">Churrasqueira 02</h3>
+              <div class="text-right shrink-0">
+                <p class="text-4xl font-black text-forest-800 leading-none">50</p>
+                <p class="text-xs text-slate-500 font-semibold">pessoas</p>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Churrasqueira completa com piscina</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Bancada de apoio, bancadas de corte e pia</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Grelhas e mesas</span></li>
+              <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-600 shrink-0"></i><span>Capacidade para 50 pessoas</span></li>
+            </ul>
+            <button type="button" class="btn-primary mt-auto flex items-center justify-center gap-2" data-wa-space="Churrasqueira 02 - com piscina (50 pessoas)" data-date-source="bbq-date">
+              <i data-lucide="calendar-check" class="w-4 h-4"></i>
+              <span>Verificar disponibilidade</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="rounded-3xl bg-gradient-to-br from-forest-900 to-forest-800 text-white p-8 flex flex-col gap-5 shadow-xl">
+          <span class="self-start bg-white/15 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Alugue as duas</span>
+          <h3 class="text-xl font-extrabold">Alugar as duas churrasqueiras juntas</h3>
+          <div>
+            <p class="text-6xl font-black leading-none">82</p>
+            <p class="text-sm text-slate-200 font-semibold mt-1">pessoas no total com as duas juntas (32 + 50)</p>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-400 shrink-0"></i><span>Ficam uma ao lado da outra</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-400 shrink-0"></i><span>Churrasqueira 01 (sem piscina) + Churrasqueira 02 (com piscina)</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-emerald-400 shrink-0"></i><span>Ideal para confraternizações grandes</span></li>
+          </ul>
+          <button type="button" class="mt-auto px-6 py-3 rounded-xl bg-white text-forest-900 font-extrabold hover:bg-slate-100 transition-all flex items-center justify-center gap-2" data-wa-space="Churrasqueiras 01 + 02 juntas (82 pessoas)" data-date-source="bbq-date">
+            <i data-lucide="calendar-check" class="w-4 h-4 text-marrada-orange"></i>
+            <span>Verificar disponibilidade</span>
+          </button>
+        </article>
+      </div>
+
     </div>
   </section>
 
   <!-- SEÇÃO COPA FUT7 EMPRESARIAL (WHATSAPP DE CAMPEONATOS: 84 99126-3957) -->
-  <section id="copa-fut7" class="py-20 bg-white">
+  <section id="copa-fut7" class="py-12 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-6">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider">
             <i data-lucide="trophy" class="w-4 h-4 text-marrada-orange"></i> Torneios &amp; Competições Oficiais
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Copa Fut7 Empresarial Marrada</h2>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Copa Fut7 Empresarial Marrada</h2>
           <p class="text-slate-600 text-base leading-relaxed">
             A maior vitrine de integração corporativa da região. Organize a equipe da sua empresa e dispute um torneio estruturado com arbitragem federada, premiações e cobertura de mídia.
           </p>
@@ -535,7 +556,7 @@
           </div>
 
           <!-- BOTÃO DE INSCRIÇÃO NO NÚMERO DE CAMPEONATOS -->
-          <a href="https://api.whatsapp.com/send?phone=5584991263957&text=Ol%C3%A1%2C%20quero%20inscrever%20minha%20empresa%20na%20Copa%20Fut7%20Empresarial" target="_blank" class="btn-primary inline-flex items-center gap-2">
+          <a href="https://api.whatsapp.com/send?phone=5584991263957&text=Ol%C3%A1%2C%20quero%20inscrever%20minha%20empresa%20na%20Copa%20Fut7%20Empresarial%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" class="btn-primary w-full sm:w-auto justify-center text-center flex items-center gap-2">
             <i data-lucide="clipboard-check" class="w-4 h-4"></i>
             <span>Inscrever Minha Empresa (Coordenação Torneios)</span>
           </a>
@@ -561,141 +582,56 @@
     </div>
   </section>
 
-  <!-- FORMULÁRIO DE AGENDAMENTO INTELIGENTE (DIVIDIDO EM 2 SESSÕES DE MODALIDADES) -->
-  <section id="agendamento" class="py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center space-y-3 mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-700">Atendimento Ágil</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Faça sua Pré-Reserva de Horário</h2>
-        <p class="text-slate-600 text-sm sm:text-base">Escolha a quadra esportiva ou o espaço de comemoração. Os dados são enviados organizados diretamente para o WhatsApp oficial de reservas do Marrada.</p>
+  <section id="escola-gremio" class="gremio-section py-12 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <div class="lg:col-span-7">
+          <div class="gremio-art">
+            <img src="assets/artegremio.png" alt="Escola Oficial de Futebol do Grêmio Natal/RN" class="w-full h-auto block" loading="lazy">
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 text-white space-y-6">
+          <div class="gremio-logo-wrap">
+            <img src="assets/gremiologo.svg" alt="Escudo do Grêmio" class="h-28 sm:h-36 w-auto">
+          </div>
+
+          <div class="space-y-3">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-400/40 text-sky-300 text-xs font-bold uppercase tracking-wider">
+              <i data-lucide="award" class="w-4 h-4"></i> Escola Oficial
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">Escola Oficial de Futebol do <span class="text-sky-400">Grêmio</span> em Natal/RN</h2>
+            <p class="text-slate-300 text-base leading-relaxed">
+              Aqui tudo começa. Na Escola Oficial de Futebol do Grêmio, o talento encontra formação, disciplina e oportunidades para crescer dentro e fora de campo. É o caminho para quem sonha alto, trabalha, evolui e quer ir do RN para o Brasil com a força do Grêmio.
+            </p>
+            <p class="text-white font-bold text-base">Venha viver essa experiência: agende uma aula experimental e dê o primeiro passo.</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="gremio-pillar"><i data-lucide="graduation-cap" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Formação</span></div>
+            <div class="gremio-pillar"><i data-lucide="shield-check" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Disciplina</span></div>
+            <div class="gremio-pillar"><i data-lucide="door-open" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Oportunidades</span></div>
+            <div class="gremio-pillar"><i data-lucide="star" class="w-5 h-5 text-sky-400 shrink-0"></i><span>Grandes sonhos</span></div>
+          </div>
+
+          <div class="gremio-contact">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-sky-300">Fale com a escola</p>
+            </div>
+            <a href="https://api.whatsapp.com/send?phone=558491384418&text=Ol%C3%A1%21%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Escola%20Oficial%20de%20Futebol%20do%20Gr%C3%AAmio.%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" class="gremio-btn">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Quero uma aula experimental</span>
+            </a>
+          </div>
+        </div>
+
       </div>
-
-      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl">
-        <form id="booking-form" class="space-y-6">
-
-          <!-- Escolha de Modalidade / Espaço Dividido por Categorias -->
-          <div class="space-y-6">
-            
-            <!-- Grupo 1: Quadras & Modalidades Esportivas -->
-            <div>
-              <div class="flex items-center gap-2 mb-3">
-                <span class="w-2 h-2 rounded-full bg-forest-800"></span>
-                <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-800">
-                  Quadras &amp; Modalidades Esportivas
-                </label>
-              </div>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="sport-selector">
-                <button type="button" data-sport="Beach Tennis (Promo 4 amigos)" class="sport-btn active">
-                  <i data-lucide="sun" class="w-5 h-5 mx-auto mb-1 text-marrada-orange"></i>
-                  <span class="text-xs font-bold block">Quadra de Areia</span>
-                  <span class="text-[10px] text-slate-500">Promoção 4x4</span>
-                </button>
-                
-                <button type="button" data-sport="Futmesa (Área Gourmet)" class="sport-btn">
-                  <i data-lucide="disc" class="w-5 h-5 mx-auto mb-1 text-emerald-600"></i>
-                  <span class="text-xs font-bold block">Futmesa</span>
-                  <span class="text-[10px] text-slate-500">Mesa Oficial</span>
-                </button>
-
-                <button type="button" data-sport="Marradão (Grama Natural)" class="sport-btn">
-                  <i data-lucide="flag" class="w-5 h-5 mx-auto mb-1 text-forest-700"></i>
-                  <span class="text-xs font-bold block">Marradão</span>
-                  <span class="text-[10px] text-slate-500">Grama Natural</span>
-                </button>
-                
-                <button type="button" data-sport="Fut7 Society" class="sport-btn">
-                  <i data-lucide="shield" class="w-5 h-5 mx-auto mb-1 text-emerald-600"></i>
-                  <span class="text-xs font-bold block">Fut7 Society</span>
-                  <span class="text-[10px] text-slate-500">Grama Sintética</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Grupo 2: Eventos, Salão & Confraternizações -->
-            <div>
-              <div class="flex items-center gap-2 mb-3">
-                <span class="w-2 h-2 rounded-full bg-marrada-orange"></span>
-                <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-800">
-                  Salão de Festas &amp; Churrasqueiras
-                </label>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <button type="button" data-sport="Salão de Festas Climatizado" class="sport-btn">
-                  <i data-lucide="snowflake" class="w-5 h-5 mx-auto mb-1 text-sky-600"></i>
-                  <span class="text-xs font-bold block">Salão Climatizado</span>
-                  <span class="text-[10px] text-slate-500">Festas &amp; Kids</span>
-                </button>
-
-                <button type="button" data-sport="Churrasqueira 01 (Com Piscina)" class="sport-btn">
-                  <i data-lucide="waves" class="w-5 h-5 mx-auto mb-1 text-teal-600"></i>
-                  <span class="text-xs font-bold block">Churrasqueira + Piscina</span>
-                  <span class="text-[10px] text-slate-500">Gourmet Exclusivo</span>
-                </button>
-
-                <button type="button" data-sport="Churrasqueira 02 (Sem Piscina)" class="sport-btn">
-                  <i data-lucide="flame" class="w-5 h-5 mx-auto mb-1 text-red-500"></i>
-                  <span class="text-xs font-bold block">Churrasqueira (Sem Piscina)</span>
-                  <span class="text-[10px] text-slate-500">Terceiro Tempo</span>
-                </button>
-              </div>
-            </div>
-
-            <input type="hidden" name="selected_sport" id="selected_sport" value="Beach Tennis (Promo 4 amigos)">
-          </div>
-
-          <!-- Dados Pessoais -->
-          <div class="grid sm:grid-cols-2 gap-4 pt-2">
-            <div>
-              <label for="user_name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Seu Nome / Responsável</label>
-              <input type="text" id="user_name" required placeholder="Ex: Carlos Silva" class="input-field">
-            </div>
-            <div>
-              <label for="user_phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Seu WhatsApp</label>
-              <input type="tel" id="user_phone" required placeholder="(84) 99999-9999" class="input-field">
-            </div>
-          </div>
-
-          <!-- Data e Turno -->
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label for="booking_date" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Data Pretendida</label>
-              <input type="date" id="booking_date" required class="input-field">
-            </div>
-            <div>
-              <label for="booking_shift" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Turno / Horário Desejado</label>
-              <select id="booking_shift" required class="input-field">
-                <option value="Manhã (06h às 11h)">Manhã (06h às 11h)</option>
-                <option value="Tarde (14h às 18h)">Tarde (14h às 18h)</option>
-                <option value="Noite (18h às 22h)" selected>Noite (18h às 22h) - Mais procurado</option>
-                <option value="Diária Completa / Evento (A combinar)">Diária Completa / Evento</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Observações -->
-          <div>
-            <label for="booking_notes" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Observações (Quantidade de convidados, time, etc.)</label>
-            <input type="text" id="booking_notes" placeholder="Ex: Aniversário infantil para 40 pessoas com piscina" class="input-field">
-          </div>
-
-          <!-- Botão de Envio -->
-          <button type="submit" class="w-full btn-primary py-4 text-base flex items-center justify-center gap-3">
-            <i data-lucide="message-square" class="w-5 h-5"></i>
-            <span>Enviar Solicitação no WhatsApp Oficial</span>
-          </button>
-
-          <p class="text-center text-xs text-slate-400">
-            A mensagem será aberta diretamente no aplicativo do WhatsApp com todos os dados preenchidos.
-          </p>
-        </form>
-      </div>
-
     </div>
   </section>
 
   <!-- LOCALIZAÇÃO / COMO CHEGAR -->
-  <section id="localizacao" class="py-20 bg-white">
+  <section id="localizacao" class="py-12 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         
@@ -720,7 +656,8 @@
               <i data-lucide="clock" class="w-5 h-5 text-forest-800 shrink-0 mt-0.5"></i>
               <div>
                 <p class="font-bold text-sm text-slate-900">Horário de Funcionamento</p>
-                <p class="text-xs text-slate-500">Segunda a Domingo: 06h às 23h</p>
+                <p class="text-xs text-slate-500">Segunda a sexta: 15h às 00h</p>
+                <p class="text-xs text-slate-500">Sábado e domingo: 7h às 19h</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -767,9 +704,9 @@
         <div>
           <h4 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Espaços</h4>
           <ul class="space-y-2 text-xs text-slate-300">
-            <li>Salão 100% Climatizado</li>
-            <li>Churrasqueira c/ Piscina</li>
-            <li>Churrasqueira Gourmet</li>
+            <li>Salão de Festas (até 100 pessoas)</li>
+            <li>Churrasqueira 01 (sem piscina)</li>
+            <li>Churrasqueira 02 (com piscina)</li>
             <li>Quadras de Areia &amp; Fut7</li>
             <li>Campo de Grama Marradão</li>
           </ul>
@@ -781,7 +718,7 @@
             <p><strong class="text-white">Torneios &amp; Competições:</strong><br>(84) 99126-3957</p>
             <p class="text-slate-400">Parnamirim - RN</p>
           </div>
-          <a href="https://api.whatsapp.com/send?phone=5584994289028" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-marrada-orange hover:underline">
+          <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-marrada-orange hover:underline">
             Chamar no WhatsApp de Reservas &rarr;
           </a>
         </div>
@@ -794,29 +731,29 @@
   </footer>
 
   <!-- BOTÃO FLUTUANTE DO WHATSAPP (RESERVAS GERAIS) -->
-  <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20quadras%20e%20espa%C3%A7os%20do%20Marrada" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Falar no WhatsApp de Reservas">
+  <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20quadras%20e%20espa%C3%A7os%20do%20Marrada%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Falar no WhatsApp de Reservas">
     <i data-lucide="message-circle" class="w-7 h-7"></i>
     <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out px-0 group-hover:px-2 font-bold text-xs">
       Reservar Espaço
     </span>
   </a>
 
-  <!-- MODAL PROMOCIONAL: SALÃO CLIMATIZADO & CHURRASQUEIRA COM PISCINA (WHATSAPP RESERVAS) -->
-  <div id="promo-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="relative w-full max-w-lg bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="promo-modal-card">
+  <!-- MODAL DE EVENTOS: SALÃO DE FESTAS (WHATSAPP RESERVAS) -->
+  <div id="event-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="event-modal-card">
       
       <!-- Botão Fechar (X) -->
-      <button id="close-modal-btn" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-colors" aria-label="Fechar Promoção">
+      <button id="close-modal-btn" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center transition-colors" aria-label="Fechar aviso">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <!-- Imagem de Destaque com Selo -->
       <div class="relative h-48 sm:h-52 w-full bg-forest-950 overflow-hidden">
-        <img src="assets/climatizada.jpg" alt="Salão Climatizado e Churrasqueira com Piscina" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
+        <img src="assets/climatizada.jpg" alt="Salão de Festas Climatizado" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80'">
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
         <div class="absolute bottom-3 left-4 right-4">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-marrada-orange text-white text-[11px] font-black uppercase tracking-wider shadow">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Condição Especial de Reservas
+            <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i> Reservas de Eventos
           </span>
         </div>
       </div>
@@ -828,25 +765,28 @@
             Planejando sua festa ou confraternização em Parnamirim?
           </h3>
           <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-            Garanta datas exclusivas para o nosso <strong>Salão 100% Climatizado</strong> com campinho kids ou reserve a <strong>Churrasqueira Gourmet com Piscina Privativa</strong> com condições prioritárias!
+            Salão com <strong>50 pessoas na área climatizada</strong> e <strong>50 na área externa</strong>, totalizando <strong>até 100 pessoas</strong>, com Campinho Kids e playground. Escolha a data e consulte a disponibilidade.
           </p>
         </div>
 
-        <!-- Mini Destaques -->
-        <div class="grid grid-cols-2 gap-2.5 pt-1 text-xs font-semibold text-slate-700">
-          <div class="flex items-center gap-2 p-2 rounded-xl bg-sky-50 border border-sky-100 text-sky-900">
-            <i data-lucide="snowflake" class="w-4 h-4 text-sky-600 shrink-0"></i>
-            <span>Salão Climatizado</span>
+        <div class="grid grid-cols-3 gap-2.5 pt-1 text-center">
+          <div class="p-2.5 rounded-xl bg-sky-50 border border-sky-100 text-sky-900">
+            <p class="text-xl font-black leading-none">50</p>
+            <p class="text-[11px] font-semibold mt-1">Área climatizada</p>
           </div>
-          <div class="flex items-center gap-2 p-2 rounded-xl bg-teal-50 border border-teal-100 text-teal-900">
-            <i data-lucide="waves" class="w-4 h-4 text-teal-600 shrink-0"></i>
-            <span>Piscina Privativa</span>
+          <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-100 text-amber-900">
+            <p class="text-xl font-black leading-none">50</p>
+            <p class="text-[11px] font-semibold mt-1">Área externa</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-forest-900 text-white">
+            <p class="text-xl font-black leading-none">100</p>
+            <p class="text-[11px] font-semibold mt-1">Capacidade total</p>
           </div>
         </div>
 
         <!-- Botões de Ação (Dispara para 84 99428-9028) -->
         <div class="pt-2 space-y-2">
-          <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%21%20Vi%20a%20promo%C3%A7%C3%A3o%20no%20site%20e%20gostaria%20de%20consultar%20valores%20para%20o%20Sal%C3%A3o%20Climatizado%20%2F%20Churrasqueira%20com%20Piscina." target="_blank" id="promo-action-btn" class="w-full btn-primary py-3.5 text-center flex items-center justify-center gap-2 text-sm sm:text-base font-extrabold shadow-lg shadow-forest-900/15">
+          <a href="https://api.whatsapp.com/send?phone=5584994289028&text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20valores%20e%20datas%20para%20o%20Sal%C3%A3o%20de%20Festas.%0A%0A_Mensagem%20enviada%20pelo%20site%20oficial%20do%20Marrada%20Sport%20Club._" target="_blank" id="event-action-btn" class="w-full btn-primary py-3.5 text-center flex items-center justify-center gap-2 text-sm sm:text-base font-extrabold shadow-lg shadow-forest-900/15">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
             <span>Consultar Valores no WhatsApp</span>
           </a>

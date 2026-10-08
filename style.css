@@ -130,3 +130,189 @@ h1, h2, h3, h4, .font-heading {
 
 .bg-marrada-orange { background-color: var(--marrada-orange); }
 .text-marrada-orange { color: var(--marrada-orange); }
+.measure-callout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #0c2b1d;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.reserve-box {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+}
+
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 7.5rem; }
+@media (min-width: 1024px) { section[id] { scroll-margin-top: 5.5rem; } }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+.chip {
+  white-space: nowrap;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #334155;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.chip.active {
+  background-color: var(--forest-800);
+  border-color: var(--forest-800);
+  color: #ffffff;
+}
+
+.highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #ffffff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+
+.highlight-badge strong {
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: var(--forest-800);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.sport-btn { position: relative; min-height: 5.5rem; }
+
+.sport-btn.active::after {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 9999px;
+  background-color: var(--forest-800);
+}
+
+@media (max-width: 639px) {
+  .input-field { font-size: 1rem; padding: 0.9rem 1rem; }
+  .btn-primary, .btn-outline { min-height: 3rem; }
+  .card-bento { border-radius: 1.25rem; }
+}
+
+.gremio-section {
+  background:
+    radial-gradient(60rem 30rem at 85% 0%, rgba(14, 165, 233, 0.22), transparent 60%),
+    radial-gradient(40rem 24rem at 0% 100%, rgba(14, 165, 233, 0.12), transparent 60%),
+    #040a18;
+  border-top: 1px solid #0b1b3a;
+}
+
+.gremio-art {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 60px rgba(14, 165, 233, 0.25), 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  background-color: #000000;
+}
+
+.gremio-logo-wrap {
+  display: inline-flex;
+  padding: 1rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 40px rgba(14, 165, 233, 0.2);
+}
+
+.gremio-pillar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.gremio-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(14, 165, 233, 0.06));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.gremio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.75rem;
+  background-color: #0ea5e9;
+  color: #ffffff;
+  font-weight: 800;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.gremio-btn:hover {
+  background-color: #0284c7;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 640px) {
+  .gremio-contact { flex-direction: row; align-items: center; justify-content: space-between; }
+}
