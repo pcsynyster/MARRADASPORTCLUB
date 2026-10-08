@@ -255,58 +255,66 @@
     </div>
   </section>
 
-  <section id="agendamento" class="py-12 sm:py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center space-y-3 mb-8 sm:mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-700">Quadras &amp; Modalidades Esportivas</span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Faça sua pré-reserva</h2>
-        <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">Escolha a modalidade, informe seus dados e a data. A solicitação abre no WhatsApp de reservas já organizada.</p>
+  <section id="agendamento" class="py-12 sm:py-20 bg-emerald-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+
+      <div class="prebook-hero">
+        <span class="inline-block px-3 py-1 rounded-full bg-marrada-orange text-white text-xs font-bold uppercase tracking-wider">Quadras &amp; Modalidades Esportivas</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mt-3">Faça sua pré-reserva</h2>
+        <p class="text-slate-200 text-sm sm:text-base mt-2 max-w-xl">Escolha a modalidade, informe seus dados e a data. A solicitação abre no WhatsApp de reservas já organizada.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="info-pill"><i data-lucide="clock" class="w-4 h-4"></i>Seg a sex: 15h às 00h</span>
+          <span class="info-pill"><i data-lucide="sun" class="w-4 h-4"></i>Sáb e dom: 7h às 19h</span>
+          <span class="info-pill"><i data-lucide="message-circle" class="w-4 h-4"></i>Confirmação pelo WhatsApp</span>
+        </div>
       </div>
 
-      <div class="bg-white rounded-3xl p-5 sm:p-10 border border-slate-200 shadow-xl">
-        <form id="booking-form" class="space-y-8">
-          <fieldset>
+      <div class="prebook-card">
+        <form id="booking-form" class="space-y-5">
+
+          <fieldset class="step-panel">
             <div class="step-title"><span class="step-num">1</span><h3>Escolha a modalidade</h3></div>
-            <div class="grid grid-cols-2 gap-3">
-            <button type="button" data-sport="FUT7 (grama sintética, medidas oficiais)" class="sport-btn active">
-              <i data-lucide="trophy" class="w-6 h-6 mx-auto mb-2 text-emerald-600"></i>
-              <span class="text-sm font-extrabold block text-slate-900">FUT7</span>
-              <span class="text-[11px] text-slate-500 block mt-0.5">Medidas oficiais</span>
-            </button>
-            <button type="button" data-sport="Quadra de areia (9 quadras)" class="sport-btn">
-              <i data-lucide="sun" class="w-6 h-6 mx-auto mb-2 text-amber-500"></i>
-              <span class="text-sm font-extrabold block text-slate-900">Quadra de areia</span>
-              <span class="text-[11px] text-slate-500 block mt-0.5">9 quadras de areia</span>
-            </button>
-            <button type="button" data-sport="Futemesa" class="sport-btn">
-              <i data-lucide="circle-dot" class="w-6 h-6 mx-auto mb-2 text-sky-600"></i>
-              <span class="text-sm font-extrabold block text-slate-900">Futemesa</span>
-              <span class="text-[11px] text-slate-500 block mt-0.5">Mesa e resenha</span>
-            </button>
-            <button type="button" data-sport="Marradão (grama natural)" class="sport-btn">
-              <i data-lucide="trees" class="w-6 h-6 mx-auto mb-2 text-forest-700"></i>
-              <span class="text-sm font-extrabold block text-slate-900">Marradão</span>
-              <span class="text-[11px] text-slate-500 block mt-0.5">Grama natural</span>
-            </button>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <button type="button" data-sport="FUT7 (grama sintética, medidas oficiais)" class="sport-btn sport-fut7 active">
+                <span class="sport-icon"><i data-lucide="trophy" class="w-6 h-6"></i></span>
+                <span class="sport-name">FUT7</span>
+                <span class="sport-detail">Medidas oficiais</span>
+              </button>
+              <button type="button" data-sport="Quadra de areia (9 quadras)" class="sport-btn sport-areia">
+                <span class="sport-icon"><i data-lucide="sun" class="w-6 h-6"></i></span>
+                <span class="sport-name">Quadra de areia</span>
+                <span class="sport-detail">9 quadras de areia</span>
+              </button>
+              <button type="button" data-sport="Futemesa" class="sport-btn sport-futemesa">
+                <span class="sport-icon"><i data-lucide="circle-dot" class="w-6 h-6"></i></span>
+                <span class="sport-name">Futemesa</span>
+                <span class="sport-detail">Mesa e resenha</span>
+              </button>
+              <button type="button" data-sport="Marradão (grama natural)" class="sport-btn sport-marradao">
+                <span class="sport-icon"><i data-lucide="trees" class="w-6 h-6"></i></span>
+                <span class="sport-name">Marradão</span>
+                <span class="sport-detail">Grama natural</span>
+              </button>
             </div>
             <input type="hidden" name="selected_sport" id="selected_sport" value="FUT7 (grama sintética, medidas oficiais)">
+            <p class="prebook-summary">Modalidade escolhida: <strong id="sport-summary">FUT7</strong></p>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="step-panel">
             <div class="step-title"><span class="step-num">2</span><h3>Seus dados</h3></div>
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
                 <label for="user_name" class="field-label">Nome do responsável</label>
-                <input type="text" id="user_name" required placeholder="Seu nome completo" class="input-field">
+                <input type="text" id="user_name" required placeholder="Seu nome completo" autocomplete="name" class="input-field">
               </div>
               <div>
                 <label for="user_phone" class="field-label">Seu WhatsApp</label>
-                <input type="tel" id="user_phone" required placeholder="(84) 90000-0000" class="input-field">
+                <input type="tel" id="user_phone" required placeholder="(84) 90000-0000" autocomplete="tel" inputmode="tel" class="input-field">
               </div>
             </div>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="step-panel">
             <div class="step-title"><span class="step-num">3</span><h3>Data e horário</h3></div>
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
@@ -324,12 +332,12 @@
             </div>
           </fieldset>
 
-          <div class="space-y-3">
-            <button type="submit" class="btn-primary w-full flex items-center justify-center gap-2 text-base !py-4">
+          <div class="space-y-3 pt-1">
+            <button type="submit" class="btn-cta w-full flex items-center justify-center gap-2 text-base">
               <i data-lucide="send" class="w-5 h-5"></i>
               <span>Enviar pré-reserva pelo WhatsApp</span>
             </button>
-            <p class="text-center text-xs text-slate-500">Segunda a sexta: 15h às 00h. Sábado e domingo: 7h às 19h. A reserva é confirmada pela equipe no WhatsApp.</p>
+            <p class="text-center text-xs text-slate-500">A reserva é confirmada pela equipe no WhatsApp.</p>
           </div>
         </form>
       </div>

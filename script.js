@@ -70,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (hiddenInput) {
         hiddenInput.value = button.getAttribute('data-sport');
       }
+      const summary = document.getElementById('sport-summary');
+      const name = button.querySelector('.sport-name');
+      if (summary && name) summary.textContent = name.textContent;
     });
   });
 

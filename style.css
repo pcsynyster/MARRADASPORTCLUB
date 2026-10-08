@@ -325,3 +325,144 @@ section[id] { scroll-margin-top: 7.5rem; }
 }
 
 .gremio-logo-wrap img { display: block; }
+
+.prebook-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #061910 0%, #133e2a 60%, #195237 100%);
+}
+
+.prebook-hero::after {
+  content: "";
+  position: absolute;
+  top: -3.5rem;
+  right: -3.5rem;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 9999px;
+  background: rgba(242, 101, 34, 0.28);
+  pointer-events: none;
+}
+
+.info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.prebook-card {
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--marrada-orange);
+  box-shadow: 0 10px 25px -12px rgba(0, 0, 0, 0.18);
+}
+
+.step-panel {
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.step-panel .input-field { background-color: #ffffff; }
+#agendamento .step-num { background-color: var(--marrada-orange); }
+
+.sport-btn {
+  --accent: #059669;
+  --tint: #ecfdf5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 7rem;
+  padding: 1rem 0.5rem;
+  border: 2px solid #e2e8f0;
+  background-color: #ffffff;
+  transition: none;
+}
+
+.sport-areia { --accent: #d97706; --tint: #fffbeb; }
+.sport-futemesa { --accent: #0284c7; --tint: #f0f9ff; }
+.sport-marradao { --accent: #195237; --tint: #f0fdf4; }
+
+.sport-btn:hover,
+.sport-btn.active {
+  border-color: var(--accent);
+  background-color: var(--tint);
+  box-shadow: none;
+}
+
+.sport-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.85rem;
+  background-color: var(--tint);
+  color: var(--accent);
+}
+
+.sport-btn.active .sport-icon { background-color: var(--accent); color: #ffffff; }
+.sport-name { font-size: 0.9rem; font-weight: 800; color: #0f172a; }
+.sport-detail { font-size: 0.72rem; color: #64748b; }
+
+.sport-btn.active::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 9999px;
+  background-color: var(--accent);
+}
+
+.sport-btn.active::after {
+  top: 0.68rem;
+  right: 0.82rem;
+  width: 0.3rem;
+  height: 0.55rem;
+  border-radius: 0;
+  background: none;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.prebook-summary {
+  margin-top: 0.9rem;
+  font-size: 0.8125rem;
+  color: #475569;
+}
+
+.prebook-summary strong { color: var(--forest-800); }
+
+.btn-cta {
+  min-height: 3.25rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.9rem;
+  background-color: var(--marrada-orange);
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(242, 101, 34, 0.3);
+}
+
+.btn-cta:hover { background-color: var(--marrada-orange-hover); }
+
+@media (min-width: 640px) {
+  .prebook-hero { padding: 2.5rem; }
+  .prebook-card { padding: 2.5rem; }
+  .step-panel { padding: 1.5rem; }
+}
