@@ -466,3 +466,102 @@ section[id] { scroll-margin-top: 7.5rem; }
   .prebook-card { padding: 2.5rem; }
   .step-panel { padding: 1.5rem; }
 }
+
+.coach-card {
+  --accent: #2563eb;
+  --tint: #eff6ff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 5px solid var(--accent);
+  box-shadow: 0 10px 25px -12px rgba(0, 0, 0, 0.18);
+}
+
+.coach-beach { --accent: #f26522; --tint: #fff7ed; }
+.coach-futevolei { --accent: #059669; --tint: #ecfdf5; }
+
+.coach-photo {
+  position: relative;
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+  background-color: var(--tint);
+}
+
+.coach-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coach-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.coach-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.25rem;
+}
+
+.coach-role {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.coach-name { font-size: 1.5rem; font-weight: 800; color: #0f172a; line-height: 1.2; }
+.coach-text { font-size: 0.875rem; color: #475569; line-height: 1.55; }
+
+.coach-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.75rem;
+  background-color: var(--tint);
+  color: #0f172a;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.coach-phone i { color: var(--accent); }
+
+.coach-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  margin-top: auto;
+  padding: 0.8rem 1rem;
+  border-radius: 0.85rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.coach-btn:hover { filter: brightness(0.92); }
+
+@media (min-width: 1024px) {
+  .coach-body { padding: 1.5rem; }
+}

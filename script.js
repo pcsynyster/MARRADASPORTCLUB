@@ -79,22 +79,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const dateField = document.getElementById('booking_date');
   const shiftField = document.getElementById('booking_shift');
   const fullDay = 'Diária Completa / Evento (A combinar)';
-  const weekdayShifts = ['Tarde (15h às 18h)', 'Noite (18h às 00h)', fullDay];
-  const weekendShifts = ['Manhã (07h às 12h)', 'Tarde (12h às 19h)', fullDay];
+
+  const shiftOptions = (day) => {
+    if (day === null) {
+      return [
+        { label: 'Manhã', ok: true },
+        { label: 'Tarde', ok: true },
+        { label: 'Noite', ok: true },
+        { label: fullDay, ok: true }
+      ];
+    }
+    const weekend = day === 0 || day === 6;
+    return [
+      { label: weekend ? 'Manhã (07h às 12h)' : 'Manhã (indisponível neste dia)', ok: weekend },
+      { label: weekend ? 'Tarde (12h às 19h)' : 'Tarde (15h às 18h)', ok: true },
+      { label: weekend ? 'Noite (indisponível neste dia)' : 'Noite (18h às 00h)', ok: !weekend },
+      { label: fullDay, ok: true }
+    ];
+  };
 
   const renderShifts = () => {
     if (!shiftField) return;
-    const day = dateField && dateField.value ? parseIso(dateField.value).getDay() : 1;
-    const options = day === 0 || day === 6 ? weekendShifts : weekdayShifts;
-    const previous = shiftField.value;
+    const day = dateField && dateField.value ? parseIso(dateField.value).getDay() : null;
+    const options = shiftOptions(day);
+    const previous = shiftField.selectedIndex;
     shiftField.innerHTML = '';
-    options.forEach((label) => {
+    options.forEach((item) => {
       const option = document.createElement('option');
-      option.value = label;
-      option.textContent = label;
+      option.value = item.label;
+      option.textContent = item.label;
+      option.disabled = !item.ok;
       shiftField.appendChild(option);
     });
-    if (options.includes(previous)) shiftField.value = previous;
+    const keep = previous >= 0 && options[previous] && options[previous].ok ? previous : options.findIndex((item) => item.ok);
+    shiftField.selectedIndex = keep;
   };
 
   renderShifts();
@@ -110,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nome = document.getElementById('user_name').value.trim();
       const telefone = document.getElementById('user_phone').value.trim();
       const data = dateField.value;
-      const turno = shiftField.value;
+      const turno = shiftField.options[shiftField.selectedIndex].textContent;
       const observacoes = document.getElementById('booking_notes').value.trim();
 
       const linhas = [
